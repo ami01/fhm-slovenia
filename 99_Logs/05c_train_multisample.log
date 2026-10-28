@@ -1,0 +1,326 @@
+PyTorch device: cuda  (NVIDIA T400 4GB)
+
+Features (20): Distance_to_River, Distance_to_Road, Hgk_grouped, LULC, Pedoloska_grouped, River_Density, aspect, drainage_density, elevation, flow_accumulation, hand, lito_poly_250_d96_grouped, ls_factor, plan_curvature, profile_curvature, slovenia_annual_max_daily_p90_3794_12m5, spi, tri, twi, valley_depth
+
+=================================================================
+Pre-loading target raster ...
+=================================================================
+Available flood pixels   : 7,326,493
+Available no-flood pixels: 122,423,292
+
+
+=================================================================
+SAMPLE SIZE: 1x  (50,000 per class)
+=================================================================
+Loading pre-existing samples ...
+  Train: 79,785  |  Test: 19,947
+  Train flood: 39,825  no-flood: 39,960
+  Test  flood: 9,957  no-flood: 9,990
+
+[1x] Random Forest ...
+  Saved: model_rf.pkl
+[1x] XGBoost (GPU hist) ...
+  Best round: 694  Saved: model_xgb.json
+[1x] CatBoost (GPU) ...
+Default metric period is 5 because AUC is/are not implemented for GPU
+  Best round: 967  Saved: model_cat.cbm
+
+[1x] DNN training  (device=cuda)
+   Epoch  Train Loss   Val Loss   Val AUC
+  --------------------------------------------
+       1     0.56433    0.49059   0.94164 ← best
+      10     0.23973    0.23099   0.96444 ← best
+      20     0.21786    0.21236   0.96843 ← best
+      30     0.20660    0.20148   0.97156 ← best
+      40     0.19890    0.19286   0.97366 ← best
+      50     0.19271    0.18804   0.97476 ← best
+      60     0.19045    0.18455   0.97564
+      70     0.18520    0.18234   0.97618
+      80     0.18306    0.18081   0.97671
+      90     0.18083    0.17822   0.97724
+     100     0.17954    0.17590   0.97776 ← best
+     110     0.17753    0.17542   0.97792 ← best
+     120     0.17575    0.17340   0.97817
+     130     0.17503    0.17369   0.97825
+     140     0.17418    0.17290   0.97839
+     150     0.17211    0.17166   0.97860
+     160     0.17201    0.17219   0.97852
+     170     0.17179    0.17194   0.97868
+     180     0.17104    0.17128   0.97875 ← best
+     190     0.17122    0.17134   0.97874
+     200     0.17169    0.17110   0.97875
+  Saved: model_dnn.pth  (best epoch=189)
+
+[1x] Metrics:
+  Random Forest: AUC=0.9821  F1=0.9399  CSI=0.8866  Sens=0.9632  Spec=0.9138  Kappa=0.877
+  XGBoost: AUC=0.9877  F1=0.9522  CSI=0.9088  Sens=0.9683  Spec=0.9348  Kappa=0.903
+  CatBoost: AUC=0.9864  F1=0.9502  CSI=0.9051  Sens=0.9663  Spec=0.9326  Kappa=0.8988
+  DNN: AUC=0.9788  F1=0.9378  CSI=0.883  Sens=0.9675  Spec=0.9046  Kappa=0.872
+  Plots saved in /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/05_Results/1x
+
+[1x] Done.
+
+
+=================================================================
+SAMPLE SIZE: 2x  (100,000 per class)
+=================================================================
+Sampling 100,000 per class from rasters ...
+  Sampled 200,000 → kept 199,485 after NaN drop (dropped 515)
+  Train: 159,588  |  Test: 39,897  (247.5s)
+Saving samples ...
+  train  2x: 159,588 samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_train_2x.csv
+  test   2x: 39,897 samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_test_2x.csv
+  Train flood: 79,657  no-flood: 79,931
+  Test  flood: 19,914  no-flood: 19,983
+
+[2x] Random Forest ...
+  Saved: model_rf.pkl
+[2x] XGBoost (GPU hist) ...
+  Best round: 999  Saved: model_xgb.json
+[2x] CatBoost (GPU) ...
+Warning: less than 75% GPU memory available for training. Free: 2739.8125 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+  Best round: 993  Saved: model_cat.cbm
+
+[2x] DNN training  (device=cuda)
+   Epoch  Train Loss   Val Loss   Val AUC
+  --------------------------------------------
+       1     0.47920    0.36663   0.95271 ← best
+      10     0.21868    0.20521   0.97064 ← best
+      20     0.19803    0.18602   0.97553 ← best
+      30     0.18907    0.17788   0.97742 ← best
+      40     0.18271    0.17148   0.97880 ← best
+      50     0.17726    0.16768   0.97955
+      60     0.17416    0.16593   0.98063 ← best
+      70     0.17022    0.16085   0.98130 ← best
+      80     0.16975    0.16086   0.98163
+      90     0.16757    0.15794   0.98191 ← best
+     100     0.16483    0.15773   0.98214
+     110     0.16510    0.15490   0.98239
+     120     0.16325    0.15452   0.98251
+     130     0.16185    0.15489   0.98276 ← best
+     140     0.16109    0.15313   0.98282 ← best
+     150     0.16141    0.15307   0.98283
+     160     0.15963    0.15325   0.98288
+     170     0.15859    0.15348   0.98286
+  Early stopping at epoch 172  (best=152, AUC=0.98297)
+  Saved: model_dnn.pth  (best epoch=152)
+
+[2x] Metrics:
+  Random Forest: AUC=0.9862  F1=0.9483  CSI=0.9017  Sens=0.9713  Spec=0.9231  Kappa=0.8943
+  XGBoost: AUC=0.991  F1=0.9607  CSI=0.9244  Sens=0.978  Spec=0.9423  Kappa=0.9202
+  CatBoost: AUC=0.9893  F1=0.9567  CSI=0.917  Sens=0.9735  Spec=0.9386  Kappa=0.9121
+  DNN: AUC=0.983  F1=0.945  CSI=0.8957  Sens=0.9743  Spec=0.9126  Kappa=0.8868
+  Plots saved in /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/05_Results/2x
+
+[2x] Done.
+
+
+=================================================================
+SAMPLE SIZE: 3x  (150,000 per class)
+=================================================================
+Sampling 150,000 per class from rasters ...
+  Sampled 300,000 → kept 299,227 after NaN drop (dropped 773)
+  Train: 239,381  |  Test: 59,846  (245.0s)
+Saving samples ...
+  train  3x: 239,381 samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_train_3x.csv
+  test   3x: 59,846 samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_test_3x.csv
+  Train flood: 119,485  no-flood: 119,896
+  Test  flood: 29,871  no-flood: 29,975
+
+[3x] Random Forest ...
+  Saved: model_rf.pkl
+[3x] XGBoost (GPU hist) ...
+  Best round: 993  Saved: model_xgb.json
+[3x] CatBoost (GPU) ...
+Warning: less than 75% GPU memory available for training. Free: 2737.8125 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+  Best round: 999  Saved: model_cat.cbm
+
+[3x] DNN training  (device=cuda)
+   Epoch  Train Loss   Val Loss   Val AUC
+  --------------------------------------------
+       1     0.47352    0.33232   0.95916 ← best
+      10     0.20869    0.19347   0.97343 ← best
+      20     0.18965    0.17461   0.97770 ← best
+      30     0.18173    0.16696   0.97974 ← best
+      40     0.17577    0.16139   0.98082 ← best
+      50     0.17181    0.15716   0.98171 ← best
+      60     0.16913    0.15536   0.98223 ← best
+      70     0.16630    0.15510   0.98250
+      80     0.16526    0.15294   0.98276
+      90     0.16308    0.15125   0.98320 ← best
+     100     0.16272    0.15193   0.98312
+     110     0.16158    0.15034   0.98348 ← best
+     120     0.16002    0.15061   0.98357
+     130     0.15939    0.14864   0.98368
+     140     0.15884    0.15065   0.98372
+     150     0.15835    0.14828   0.98379
+     160     0.15760    0.14799   0.98390 ← best
+     170     0.15706    0.14838   0.98387
+     180     0.15754    0.14811   0.98394
+     190     0.15626    0.14778   0.98402 ← best
+     200     0.15669    0.14762   0.98396
+  Saved: model_dnn.pth  (best epoch=196)
+
+[3x] Metrics:
+  Random Forest: AUC=0.987  F1=0.9505  CSI=0.9057  Sens=0.9706  Spec=0.9286  Kappa=0.8992
+  XGBoost: AUC=0.9919  F1=0.9634  CSI=0.9295  Sens=0.9785  Spec=0.9475  Kappa=0.9259
+  CatBoost: AUC=0.9899  F1=0.9578  CSI=0.919  Sens=0.9741  Spec=0.9403  Kappa=0.9143
+  DNN: AUC=0.984  F1=0.9471  CSI=0.8996  Sens=0.975  Spec=0.9164  Kappa=0.8913
+  Plots saved in /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/05_Results/3x
+
+[3x] Done.
+
+
+=================================================================
+SAMPLE SIZE: 4x  (200,000 per class)
+=================================================================
+Sampling 200,000 per class from rasters ...
+  Sampled 400,000 → kept 398,961 after NaN drop (dropped 1,039)
+  Train: 319,168  |  Test: 79,793  (244.8s)
+Saving samples ...
+  train  4x: 319,168 samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_train_4x.csv
+  test   4x: 79,793 samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_test_4x.csv
+  Train flood: 159,295  no-flood: 159,873
+  Test  flood: 39,824  no-flood: 39,969
+
+[4x] Random Forest ...
+  Saved: model_rf.pkl
+[4x] XGBoost (GPU hist) ...
+  Best round: 999  Saved: model_xgb.json
+[4x] CatBoost (GPU) ...
+Warning: less than 75% GPU memory available for training. Free: 2737.8125 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+  Best round: 999  Saved: model_cat.cbm
+
+[4x] DNN training  (device=cuda)
+   Epoch  Train Loss   Val Loss   Val AUC
+  --------------------------------------------
+       1     0.42432    0.29343   0.96075 ← best
+      10     0.20211    0.18584   0.97519 ← best
+      20     0.18362    0.16841   0.97906 ← best
+      30     0.17592    0.16057   0.98077 ← best
+      40     0.17046    0.15498   0.98194 ← best
+      50     0.16679    0.15210   0.98260 ← best
+      60     0.16451    0.15080   0.98288
+      70     0.16268    0.14904   0.98321
+      80     0.16077    0.14788   0.98337 ← best
+      90     0.15925    0.14728   0.98372 ← best
+     100     0.15894    0.14622   0.98388 ← best
+     110     0.15751    0.14566   0.98391
+     120     0.15653    0.14572   0.98415
+     130     0.15661    0.14379   0.98432
+     140     0.15599    0.14344   0.98445 ← best
+     150     0.15489    0.14364   0.98450
+     160     0.15422    0.14313   0.98464 ← best
+     170     0.15384    0.14279   0.98459
+     180     0.15373    0.14245   0.98464
+     190     0.15362    0.14254   0.98471
+     200     0.15341    0.14260   0.98466
+  Saved: model_dnn.pth  (best epoch=198)
+
+[4x] Metrics:
+  Random Forest: AUC=0.9877  F1=0.952  CSI=0.9083  Sens=0.972  Spec=0.9302  Kappa=0.9021
+  XGBoost: AUC=0.9925  F1=0.9648  CSI=0.932  Sens=0.9803  Spec=0.9484  Kappa=0.9286
+  CatBoost: AUC=0.99  F1=0.9586  CSI=0.9205  Sens=0.9749  Spec=0.9411  Kappa=0.916
+  DNN: AUC=0.9847  F1=0.9497  CSI=0.9042  Sens=0.976  Spec=0.9208  Kappa=0.8968
+  Plots saved in /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/05_Results/4x
+
+[4x] Done.
+
+
+=================================================================
+SAMPLE SIZE: 10x  (500,000 per class)
+=================================================================
+Sampling 500,000 per class from rasters ...
+  Sampled 1,000,000 → kept 997,473 after NaN drop (dropped 2,527)
+  Train: 797,978  |  Test: 199,495  (247.4s)
+Saving samples ...
+  train  10x: 797,978 samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_train_10x.csv
+  test   10x: 199,495 samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_test_10x.csv
+  Train flood: 398,298  no-flood: 399,680
+  Test  flood: 99,575  no-flood: 99,920
+
+[10x] Random Forest ...
+  Saved: model_rf.pkl
+[10x] XGBoost (GPU hist) ...
+  Best round: 999  Saved: model_xgb.json
+[10x] CatBoost (GPU) ...
+Warning: less than 75% GPU memory available for training. Free: 2729.8125 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+  Best round: 999  Saved: model_cat.cbm
+
+[10x] DNN training  (device=cuda)
+   Epoch  Train Loss   Val Loss   Val AUC
+  --------------------------------------------
+       1     0.34515    0.23306   0.96605 ← best
+      10     0.17941    0.16231   0.98053 ← best
+      20     0.16841    0.15070   0.98293 ← best
+      30     0.16395    0.14715   0.98372 ← best
+      40     0.16193    0.14741   0.98387
+      50     0.16054    0.14375   0.98435 ← best
+      60     0.15941    0.14381   0.98436
+      70     0.15838    0.14413   0.98449
+      80     0.15736    0.14211   0.98481 ← best
+      90     0.15675    0.14190   0.98494 ← best
+     100     0.15601    0.14178   0.98507 ← best
+     110     0.15548    0.14038   0.98524 ← best
+     120     0.15450    0.13942   0.98527
+     130     0.15388    0.13954   0.98544
+     140     0.15325    0.13830   0.98553
+     150     0.15274    0.13840   0.98568
+     160     0.15184    0.13747   0.98575
+     170     0.15106    0.13688   0.98583
+     180     0.15091    0.13679   0.98592 ← best
+     190     0.15096    0.13667   0.98593
+     200     0.15072    0.13670   0.98594
+  Saved: model_dnn.pth  (best epoch=195)
+
+[10x] Metrics:
+  Random Forest: AUC=0.9903  F1=0.9574  CSI=0.9183  Sens=0.9775  Spec=0.9357  Kappa=0.9132
+  XGBoost: AUC=0.9941  F1=0.9692  CSI=0.9403  Sens=0.9851  Spec=0.9525  Kappa=0.9376
+  CatBoost: AUC=0.991  F1=0.9612  CSI=0.9253  Sens=0.9777  Spec=0.9436  Kappa=0.9212
+  DNN: AUC=0.986  F1=0.9518  CSI=0.908  Sens=0.9783  Spec=0.9229  Kappa=0.9011
+  Plots saved in /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/05_Results/10x
+
+[10x] Done.
+
+=================================================================
+CROSS-SAMPLE-SIZE COMPARISON
+=================================================================
+Saved: sample_size_comparison.csv
+SampleSize  N_train         Model    AUC     F1    CSI  Sensitivity  Specificity  Kappa
+        1x    79785 Random Forest 0.9821 0.9399 0.8866       0.9632       0.9138 0.8770
+        1x    79785       XGBoost 0.9877 0.9522 0.9088       0.9683       0.9348 0.9030
+        1x    79785      CatBoost 0.9864 0.9502 0.9051       0.9663       0.9326 0.8988
+        1x    79785           DNN 0.9788 0.9378 0.8830       0.9675       0.9046 0.8720
+        2x   159588 Random Forest 0.9862 0.9483 0.9017       0.9713       0.9231 0.8943
+        2x   159588       XGBoost 0.9910 0.9607 0.9244       0.9780       0.9423 0.9202
+        2x   159588      CatBoost 0.9893 0.9567 0.9170       0.9735       0.9386 0.9121
+        2x   159588           DNN 0.9830 0.9450 0.8957       0.9743       0.9126 0.8868
+        3x   239381 Random Forest 0.9870 0.9505 0.9057       0.9706       0.9286 0.8992
+        3x   239381       XGBoost 0.9919 0.9634 0.9295       0.9785       0.9475 0.9259
+        3x   239381      CatBoost 0.9899 0.9578 0.9190       0.9741       0.9403 0.9143
+        3x   239381           DNN 0.9840 0.9471 0.8996       0.9750       0.9164 0.8913
+        4x   319168 Random Forest 0.9877 0.9520 0.9083       0.9720       0.9302 0.9021
+        4x   319168       XGBoost 0.9925 0.9648 0.9320       0.9803       0.9484 0.9286
+        4x   319168      CatBoost 0.9900 0.9586 0.9205       0.9749       0.9411 0.9160
+        4x   319168           DNN 0.9847 0.9497 0.9042       0.9760       0.9208 0.8968
+       10x   797978 Random Forest 0.9903 0.9574 0.9183       0.9775       0.9357 0.9132
+       10x   797978       XGBoost 0.9941 0.9692 0.9403       0.9851       0.9525 0.9376
+       10x   797978      CatBoost 0.9910 0.9612 0.9253       0.9777       0.9436 0.9212
+       10x   797978           DNN 0.9860 0.9518 0.9080       0.9783       0.9229 0.9011
+Saved: sample_size_comparison.png
+Saved: auc_heatmap.png
+
+=================================================================
+ALL DONE
+=================================================================
+Samples   → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples
+Comparison→ /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/05_Results/comparison
+  models_1x/   results_1x/
+  models_2x/   results_2x/
+  models_3x/   results_3x/
+  models_4x/   results_4x/
+  models_10x/   results_10x/

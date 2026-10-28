@@ -1,0 +1,5 @@
+step,removed_feature,vif_at_removal,features_before,features_after
+1,slovenia_annual_max_daily_mean_3794_12m5,100.111,24,23
+2,tpi,73.019,23,22
+3,slope,44.316,22,21
+4,slovenia_mean_annual_rainfall_3794_12m5,11.667,21,20

@@ -1,0 +1,36 @@
+start 2026-10-23T12:12:22+02:00
+10x: 997,473 samples, 19 blocks, flood 0.499
+Warning: less than 75% GPU memory available for training. Free: 1069.9375 Total: 45459.5
+Default metric period is 5 because AUC is/are not implemented for GPU
+fold 1: RF 0.9653, XGBoost 0.9609, CatBoost 0.9630, DNN 0.9636, Ensemble_mean 0.9650  [743 s]
+Warning: less than 75% GPU memory available for training. Free: 328.625 Total: 45459.5
+Default metric period is 5 because AUC is/are not implemented for GPU
+fold 2: RF 0.9626, XGBoost 0.9540, CatBoost 0.9599, DNN 0.9548, Ensemble_mean 0.9618  [754 s]
+Warning: less than 75% GPU memory available for training. Free: 1029.9375 Total: 45459.5
+Default metric period is 5 because AUC is/are not implemented for GPU
+fold 3: RF 0.9800, XGBoost 0.9813, CatBoost 0.9824, DNN 0.9789, Ensemble_mean 0.9825  [792 s]
+Warning: less than 75% GPU memory available for training. Free: 1029.9375 Total: 45459.5
+Default metric period is 5 because AUC is/are not implemented for GPU
+fold 4: RF 0.9760, XGBoost 0.9747, CatBoost 0.9781, DNN 0.9752, Ensemble_mean 0.9775  [594 s]
+Warning: less than 75% GPU memory available for training. Free: 1027.9375 Total: 45459.5
+Default metric period is 5 because AUC is/are not implemented for GPU
+fold 5: RF 0.9881, XGBoost 0.9875, CatBoost 0.9871, DNN 0.9868, Ensemble_mean 0.9885  [837 s]
+                              AUC_mean  AUC_std  CSI_mean  CSI_std  threshold_mean
+Model         threshold_rule                                                      
+CatBoost      national          0.9741   0.0120    0.8393   0.0383          0.5200
+              oracle            0.9741   0.0120    0.8632   0.0324          0.2627
+              trainfold         0.9741   0.0120    0.8392   0.0389          0.5191
+DNN           national          0.9719   0.0127    0.8443   0.0339          0.6000
+              oracle            0.9719   0.0127    0.8588   0.0295          0.3700
+              trainfold         0.9719   0.0127    0.8522   0.0303          0.5354
+Ensemble_mean national          0.9751   0.0114    0.8428   0.0333          0.5700
+              oracle            0.9751   0.0114    0.8692   0.0271          0.3282
+RF            national          0.9744   0.0105    0.8537   0.0266          0.5500
+              oracle            0.9744   0.0105    0.8697   0.0290          0.3718
+              trainfold         0.9744   0.0105    0.8523   0.0271          0.5573
+XGBoost       national          0.9717   0.0140    0.8079   0.0447          0.5700
+              oracle            0.9717   0.0140    0.8615   0.0304          0.1718
+              trainfold         0.9717   0.0140    0.8163   0.0350          0.5463
+ablation RF: all 0.9744 ± 0.0105 | no substrate 0.9635 ± 0.0189
+done in 62.0 min -> /home/arora/manuscripts/FSM_Pipeline_LULC/09_Analysis/spatial_cv_v2/10x_v2_shift25000
+end 2026-10-23T13:15:16+02:00 exit=0

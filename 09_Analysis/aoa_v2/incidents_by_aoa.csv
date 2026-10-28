@@ -1,0 +1,5 @@
+sites,n_flood,n_comparison,AUC
+all,5019,28905,0.732
+inside AOA,5013,28835,0.7321
+outside AOA (DI),6,70,0.5381
+categorical novelty,0,0,

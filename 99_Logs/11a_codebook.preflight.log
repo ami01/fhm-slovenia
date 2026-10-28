@@ -1,0 +1,8 @@
+
+=== preflight: 11a_export_codebook.py ===
+  syntax            OK
+  undefined names   OK
+  imports           OK
+  --> PASS
+
+1/1 passed

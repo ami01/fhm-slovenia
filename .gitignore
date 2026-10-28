@@ -1,0 +1,74 @@
+# ─── Large data: regenerable, and over GitHub's limits ────────────────────────
+# GitHub rejects files >100 MB outright and warns above 50 MB.
+# 09_Analysis/spatial_cv/10x/fold_assignments.csv alone is 224 MB.
+
+# Per-sample spatial-CV fold labels (~508 MB total). Regenerate with stage 08b/08c.
+**/fold_assignments.csv
+
+# Balanced sample draw used for VIF screening (39 MB). Regenerate with stage 04.
+02_Collinearity/samples_balanced_masked.csv
+
+# Rasters — the input stack is 13 GB and outputs 16 GB. Never commit.
+*.tif
+*.tif.aux.xml
+*.tfw
+*.vrt
+
+# Trained models (1.5 GB) — regenerate with stage 05.
+*.pkl
+*.joblib
+*.cbm
+*.pth
+*.onnx
+04_Models/
+
+# Sample CSV/shapefile sets (1.5 GB) — regenerate with stage 05.
+03_Samples/
+
+# Full-grid map outputs
+06_Probability_Maps/
+07_Classified_Maps/
+
+# Symlinks to source data living outside this tree
+01_Input_Features/
+Vectors
+Rasters
+
+# ─── Derived / transient ──────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+catboost_info/
+.venv_fig/
+.venv/
+
+# ─── macOS / local tooling ──────────────────────────────────────────────────────
+.DS_Store
+.claude/
+
+# ─── Kept deliberately ────────────────────────────────────────────────────────
+# 00_Scripts/            all pipeline code
+# 02_Collinearity/       VIF logs, correlation matrix, selected_features.txt
+# 05_Results/            metrics CSVs, comparison tables, plots
+# 08_Validation/         validation metrics, ROC/PR/confusion figures, reports
+# 09_Analysis/           spatial CV summaries, SHAP importances, area statistics
+# 10_Documentation/      .docx reports, dataset inventory
+# 99_Logs/               per-stage logs and stage_timings.csv
+# README.md PROGRESS.md requirements.txt environment.yml
+
+# ─── Manuscript figures: keep the curated set, exclude regenerable bulk ───────
+# 10b regenerates the full 5-panel map set for every sample size (~200 MB) and
+# 10a writes per-model single panels (~52 MB). Both are reproducible in ~1 h via
+# `./run_stages.sh 10a 10b`. Kept: main/, comparison/, supplementary/, subbasin/,
+# plus tables/, docs/ and results/.
+Manuscript/figures/1x/
+Manuscript/figures/2x/
+Manuscript/figures/3x/
+Manuscript/figures/4x/
+Manuscript/figures/10x/
+Manuscript/figures/maps/
+Manuscript/figures/individual/
+_v2_view/
+
+# Zenodo data deposit staging (12a_zenodo_package.py); uploaded to Zenodo, never committed
+Zenodo_data/

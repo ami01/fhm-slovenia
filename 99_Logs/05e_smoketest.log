@@ -1,0 +1,57 @@
+GPU capped at 15% of device memory
+train 79,785 | test 19,947 | base features 19
+sampling fraction raster at sample coordinates ...
+  read frac_arable
+  read frac_permanent_crop
+  read frac_grassland
+  read frac_woody
+  read frac_built_up
+  read frac_water_wetland
+  read frac_bare_open
+  mean coverage train=1.0000 test=1.0000
+  baseline19   19 columns
+  ordinal20    20 columns
+  onehot       25 columns
+  fractions    25 columns
+
+=== baseline19 (19 features) ===
+  [1/1] seed= 42  AUC=0.9484  CSI=0.8154  F1=0.8983  Kappa=0.7837
+
+=== ordinal20 (20 features) ===
+  [1/1] seed= 42  AUC=0.9517  CSI=0.8208  F1=0.9016  Kappa=0.7917
+
+=== onehot (25 features) ===
+  [1/1] seed= 42  AUC=0.9540  CSI=0.8240  F1=0.9035  Kappa=0.7952
+
+=== fractions (25 features) ===
+  [1/1] seed= 42  AUC=0.9547  CSI=0.8264  F1=0.9049  Kappa=0.7989
+
+==============================================================================
+LULC encoding comparison — DNN over 1 seeds per variant
+==============================================================================
+variant                    AUC              CSI               F1            Kappa
+baseline19        0.9484+-nan     0.8154+-nan     0.8983+-nan     0.7837+-nan
+ordinal20         0.9517+-nan     0.8208+-nan     0.9016+-nan     0.7917+-nan
+onehot            0.9540+-nan     0.8240+-nan     0.9035+-nan     0.7952+-nan
+fractions         0.9547+-nan     0.8264+-nan     0.9049+-nan     0.7989+-nan
+
+==============================================================================
+Each encoding vs baseline19 (no LULC).  |d|/sd_pooled >= 2 => real effect
+==============================================================================
+variant      metric         delta  sd_pooled   |d|/sd  verdict
+ordinal20    AUC          +0.0033        nan      inf  better
+ordinal20    CSI          +0.0054        nan      inf  better
+ordinal20    F1           +0.0032        nan      inf  better
+ordinal20    Kappa        +0.0080        nan      inf  better
+
+onehot       AUC          +0.0056        nan      inf  better
+onehot       CSI          +0.0086        nan      inf  better
+onehot       F1           +0.0052        nan      inf  better
+onehot       Kappa        +0.0115        nan      inf  better
+
+fractions    AUC          +0.0063        nan      inf  better
+fractions    CSI          +0.0110        nan      inf  better
+fractions    F1           +0.0066        nan      inf  better
+fractions    Kappa        +0.0152        nan      inf  better
+
+Saved lulc_encoding_study.csv / _summary.csv / .png -> /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/05_Results

@@ -1,0 +1,73 @@
+res_m,model,threshold_rule,zone,flood_cells,POD
+12.5,RF,screening,narrow corridors,85034,0.7598490015758402
+12.5,RF,screening,wide floodplains,7208888,0.9801284192513464
+12.5,RF,screening,Dinaric karst units,1315162,0.9615971264376556
+12.5,XGBoost,screening,narrow corridors,85034,0.8087000493920079
+12.5,XGBoost,screening,wide floodplains,7208888,0.9853462836431915
+12.5,XGBoost,screening,Dinaric karst units,1315162,0.9779281943973442
+12.5,CatBoost,screening,narrow corridors,85034,0.795752287320366
+12.5,CatBoost,screening,wide floodplains,7208888,0.9827032962642782
+12.5,CatBoost,screening,Dinaric karst units,1315162,0.971439259954287
+12.5,DNN,screening,narrow corridors,85034,0.7859679657548745
+12.5,DNN,screening,wide floodplains,7208888,0.9757085974979774
+12.5,DNN,screening,Dinaric karst units,1315162,0.9640378903891688
+12.5,Ensemble_mean,screening,narrow corridors,85034,0.7877672460427594
+12.5,Ensemble_mean,screening,wide floodplains,7208888,0.9828074732191705
+12.5,Ensemble_mean,screening,Dinaric karst units,1315162,0.9714765177217711
+12.5,Ensemble_mean,prevalence,narrow corridors,85034,0.4101065456170473
+12.5,Ensemble_mean,prevalence,wide floodplains,7208888,0.8699064266222474
+12.5,Ensemble_mean,prevalence,Dinaric karst units,1315162,0.8425509556997541
+25.0,RF,screening,narrow corridors,84796,0.7382305769140054
+25.0,RF,screening,wide floodplains,7207337,0.9797504959182566
+25.0,RF,screening,Dinaric karst units,1314951,0.961493622195808
+25.0,XGBoost,screening,narrow corridors,84796,0.7872777017783857
+25.0,XGBoost,screening,wide floodplains,7207337,0.9851332052323902
+25.0,XGBoost,screening,Dinaric karst units,1314951,0.9776060096535917
+25.0,CatBoost,screening,narrow corridors,84796,0.7828907023916223
+25.0,CatBoost,screening,wide floodplains,7207337,0.9827874012273882
+25.0,CatBoost,screening,Dinaric karst units,1314951,0.9719221476693808
+25.0,DNN,screening,narrow corridors,84796,0.7735388461719892
+25.0,DNN,screening,wide floodplains,7207337,0.97616054306882
+25.0,DNN,screening,Dinaric karst units,1314951,0.9645150275561599
+25.0,Ensemble_mean,screening,narrow corridors,84796,0.76834992216614
+25.0,Ensemble_mean,screening,wide floodplains,7207337,0.9824743868643856
+25.0,Ensemble_mean,screening,Dinaric karst units,1314951,0.9710407460049842
+25.0,Ensemble_mean,prevalence,narrow corridors,84796,0.34876645124770034
+25.0,Ensemble_mean,prevalence,wide floodplains,7207337,0.8650368367678658
+25.0,Ensemble_mean,prevalence,Dinaric karst units,1314951,0.8349467014360231
+50.0,RF,screening,narrow corridors,83905,0.6694237530540492
+50.0,RF,screening,wide floodplains,7201821,0.9758770733124302
+50.0,RF,screening,Dinaric karst units,1314167,0.9565785779128528
+50.0,XGBoost,screening,narrow corridors,83905,0.7072999225314344
+50.0,XGBoost,screening,wide floodplains,7201821,0.9809487072783397
+50.0,XGBoost,screening,Dinaric karst units,1314167,0.9723010850219188
+50.0,CatBoost,screening,narrow corridors,83905,0.7208271259162148
+50.0,CatBoost,screening,wide floodplains,7201821,0.9797213788012782
+50.0,CatBoost,screening,Dinaric karst units,1314167,0.9680793993457453
+50.0,DNN,screening,narrow corridors,83905,0.7165723139264645
+50.0,DNN,screening,wide floodplains,7201821,0.9734737922533759
+50.0,DNN,screening,Dinaric karst units,1314167,0.9610178919421961
+50.0,Ensemble_mean,screening,narrow corridors,83905,0.6992074369823014
+50.0,Ensemble_mean,screening,wide floodplains,7201821,0.978543204558958
+50.0,Ensemble_mean,screening,Dinaric karst units,1314167,0.9659259439629819
+50.0,Ensemble_mean,prevalence,narrow corridors,83905,0.24481258566235622
+50.0,Ensemble_mean,prevalence,wide floodplains,7201821,0.8512048549943132
+50.0,Ensemble_mean,prevalence,Dinaric karst units,1314167,0.8162227479460373
+100.0,RF,screening,narrow corridors,82924,0.5062828614152718
+100.0,RF,screening,wide floodplains,7191674,0.9626728074715288
+100.0,RF,screening,Dinaric karst units,1312604,0.9417409972847866
+100.0,XGBoost,screening,narrow corridors,82924,0.5070305339829241
+100.0,XGBoost,screening,wide floodplains,7191674,0.9657978100787105
+100.0,XGBoost,screening,Dinaric karst units,1312604,0.9539068904254444
+100.0,CatBoost,screening,narrow corridors,82924,0.5711494862765906
+100.0,CatBoost,screening,wide floodplains,7191674,0.9685483518858057
+100.0,CatBoost,screening,Dinaric karst units,1312604,0.9551791705647705
+100.0,DNN,screening,narrow corridors,82924,0.5627803772128697
+100.0,DNN,screening,wide floodplains,7191674,0.9614765630366449
+100.0,DNN,screening,Dinaric karst units,1312604,0.9468118335766157
+100.0,Ensemble_mean,screening,narrow corridors,82924,0.52339491582654
+100.0,Ensemble_mean,screening,wide floodplains,7191674,0.9650145432064913
+100.0,Ensemble_mean,screening,Dinaric karst units,1312604,0.9499932957693257
+100.0,Ensemble_mean,prevalence,narrow corridors,82924,0.13971829627128454
+100.0,Ensemble_mean,prevalence,wide floodplains,7191674,0.8110791729436012
+100.0,Ensemble_mean,prevalence,Dinaric karst units,1312604,0.7673121520275726

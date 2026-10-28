@@ -1,0 +1,9 @@
+{
+  "origin_x": 376117.9334020127,
+  "origin_y": 31824.645620096475,
+  "block_m": 50000,
+  "crs": "EPSG:3794",
+  "n_samples": 997473,
+  "n_blocks": 16,
+  "rule": "fold = (2*bx + by) mod 5 + 1"
+}

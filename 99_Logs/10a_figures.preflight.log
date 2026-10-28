@@ -1,0 +1,8 @@
+
+=== preflight: 10a_figures_maps.py ===
+  syntax            OK
+  undefined names   OK
+  imports           OK
+  --> PASS
+
+1/1 passed

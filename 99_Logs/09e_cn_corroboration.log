@@ -1,0 +1,15 @@
+catchments: 227   coverage_ok: 218
+binary map 12996x19909  valid cells 129749785
+
+used in correlation: 216 of 227 (coverage_ok and inside Slovenia)
+  CN AMC I (dry)          r=+0.391 (p=2.6e-09)   rho=+0.545 (p=3.8e-18)
+  CN AMC II (average)     r=+0.448 (p=4.4e-12)   rho=+0.563 (p=1.9e-19)
+  CN AMC III (wet)        r=+0.416 (p=2e-10)   rho=+0.514 (p=5.8e-16)
+  CN range                r=-0.159 (p=0.019)   rho=-0.513 (p=6.7e-16)
+  CN AMC I (dry)          inventory: r=+0.308   rho=+0.492
+  CN AMC II (average)     inventory: r=+0.355   rho=+0.480
+  CN AMC III (wet)        inventory: r=+0.326   rho=+0.406
+  CN range                inventory: r=-0.126   rho=-0.451
+  map vs inventory rho=+0.895   partial rho(map, CN II | inventory)=+0.341
+
+Saved -> 09_Analysis/cn_corroboration/

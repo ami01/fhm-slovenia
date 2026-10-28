@@ -1,0 +1,31 @@
+start 2026-10-23T12:16:23+02:00
+v2 train: 79,785 samples, 0 with missing features (dropped)
+v2 test: 19,947 samples, 0 with missing features (dropped)
+RF 2 s
+XGBoost best round 266, 18 s
+Default metric period is 5 because AUC is/are not implemented for GPU
+CatBoost best round 609, 117 s
+DNN best epoch 155, 104 s
+        Model  threshold    AUC    CSI     F1  Kappa  Sensitivity  Specificity
+           RF      0.535 0.9841 0.8960 0.9452 0.8882       0.9652       0.9231
+      XGBoost      0.540 0.9875 0.9075 0.9515 0.9016       0.9664       0.9353
+     CatBoost      0.525 0.9868 0.9083 0.9520 0.9022       0.9702       0.9321
+          DNN      0.540 0.9801 0.8863 0.9397 0.8765       0.9641       0.9124
+Ensemble_mean      0.510 0.9863 0.9046 0.9499 0.8977       0.9718       0.9260
+done in 6.4 min
+v2_1x_abl_base exit=0 2026-10-23T12:22:56+02:00
+v2 train: 79,785 samples, 0 with missing features (dropped)
+v2 test: 19,947 samples, 0 with missing features (dropped)
+RF 2 s
+XGBoost best round 337, 22 s
+Default metric period is 5 because AUC is/are not implemented for GPU
+CatBoost best round 724, 142 s
+DNN best epoch 189, 108 s
+        Model  threshold    AUC    CSI     F1  Kappa  Sensitivity  Specificity
+           RF      0.540 0.9837 0.8971 0.9458 0.8894       0.9657       0.9238
+      XGBoost      0.550 0.9869 0.9083 0.9519 0.9025       0.9670       0.9356
+     CatBoost      0.455 0.9861 0.9053 0.9503 0.8982       0.9742       0.9241
+          DNN      0.555 0.9797 0.8880 0.9407 0.8789       0.9620       0.9169
+Ensemble_mean      0.550 0.9858 0.9048 0.9500 0.8983       0.9674       0.9310
+done in 6.3 min
+v2_1x_noLULC exit=0 2026-10-23T12:29:15+02:00

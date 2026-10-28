@@ -1,0 +1,40 @@
+{
+  "threshold": 0.2364864945411682,
+  "dbar": 0.4343881607055664,
+  "n_ref": 150000,
+  "weights": {
+    "Distance_to_River": 0.0356,
+    "Distance_to_Road": 0.0164,
+    "River_Density": 0.0489,
+    "aspect": 0.0135,
+    "drainage_density": 0.0072,
+    "elevation": 0.1798,
+    "flow_accumulation": 0.0105,
+    "hand": 0.3677,
+    "ls_factor": 0.047,
+    "plan_curvature": 0.0054,
+    "profile_curvature": 0.0072,
+    "slovenia_annual_max_daily_p90_3794_12m5": 0.094,
+    "spi": 0.0141,
+    "tri": 0.0625,
+    "twi": 0.0169,
+    "valley_depth": 0.0732
+  },
+  "cells_100m": 2024380,
+  "inside": 0.9654679457414121,
+  "outside_DI": 0.03453205425858782,
+  "categorical_novelty": 0.0,
+  "outside_km2": 699.0600000000001,
+  "cv_samples_outside": 0.051741751405802464,
+  "DI_quantiles": {
+    "50": 0.0993853434920311,
+    "90": 0.1766323298215866,
+    "95": 0.21401000022888184,
+    "99": 0.32487958669662476,
+    "99.9": 0.5326192378997803
+  },
+  "novel_LULC": 0.0,
+  "novel_Pedoloska_grouped": 0.0,
+  "novel_lito_poly_250_d96_grouped": 0.0,
+  "novel_Hgk_grouped": 0.0
+}

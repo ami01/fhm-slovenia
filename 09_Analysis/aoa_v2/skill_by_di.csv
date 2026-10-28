@@ -1,0 +1,22 @@
+cv,DI_bin,n,flood_share,AUC,CSI_at_0_5
+block CV (08e),0-25%,203268,0.8713,0.8541,0.8837
+block CV (08e),25-50%,473870,0.5189,0.9555,0.7791
+block CV (08e),50-75%,197275,0.2387,0.9865,0.7539
+block CV (08e),75-100%,71449,0.2834,0.9919,0.867
+block CV (08e),outside AOA,51611,0.1463,0.9965,0.8732
+block CV (08e),inside AOA,945862,0.5184,0.9653,0.8178
+block CV (08e),all,997473,0.4991,0.968,0.8187
+leave-one-regime-out,0-25%,132061,0.8748,0.8303,0.8778
+leave-one-regime-out,25-50%,490400,0.5624,0.9535,0.8142
+leave-one-regime-out,50-75%,224112,0.2931,0.9784,0.7578
+leave-one-regime-out,75-100%,71317,0.3172,0.9869,0.7564
+leave-one-regime-out,outside AOA,73190,0.1814,0.9938,0.6941
+leave-one-regime-out,inside AOA,917890,0.5225,0.9623,0.8191
+leave-one-regime-out,all,991080,0.4973,0.9657,0.8159
+"block CV, 5 km buffer",0-25%,203268,0.8713,0.8302,0.8659
+"block CV, 5 km buffer",25-50%,473870,0.5189,0.953,0.7597
+"block CV, 5 km buffer",50-75%,197275,0.2387,0.984,0.6057
+"block CV, 5 km buffer",75-100%,71449,0.2834,0.9906,0.7984
+"block CV, 5 km buffer",outside AOA,51611,0.1463,0.9959,0.8384
+"block CV, 5 km buffer",inside AOA,945862,0.5184,0.9616,0.785
+"block CV, 5 km buffer",all,997473,0.4991,0.9646,0.7858

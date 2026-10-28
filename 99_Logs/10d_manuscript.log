@@ -1,0 +1,214 @@
+
+============================================================
+1. Creating directory structure …
+============================================================
+  Created 27 directories.
+
+============================================================
+2. Copying scripts to code/ …
+============================================================
+  [SKIP] not found: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/prepare_rasters.py
+  [SKIP] not found: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/align_and_collinearity.py
+  [SKIP] not found: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/train_models_multisample.py
+  [SKIP] not found: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/predict_probability_maps.py
+  [SKIP] not found: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/predict_probability_maps_1x_4x.py
+  [SKIP] not found: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/validate_classify_spatial_cv_multiscale.py
+  [SKIP] not found: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/shap_analysis.py
+  [SKIP] not found: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/classify_area_analysis.py
+  [SKIP] not found: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/generate_summary_report.py
+
+============================================================
+3. Copying figures …
+============================================================
+  --- figures/main/ ---
+  [OK]   multiscale_comparison.png → Manuscript/figures/main/Fig01_multiscale_performance_comparison.png
+  [OK]   roc_validation.png → Manuscript/figures/main/Fig02_roc_curves_10x.png
+  [OK]   confusion_matrices.png → Manuscript/figures/main/Fig03_confusion_matrices_10x.png
+  [OK]   metrics_comparison.png → Manuscript/figures/main/Fig04_metrics_bar_chart_10x.png
+  [OK]   spatial_cv_comparison.png → Manuscript/figures/main/Fig05_spatial_cv_vs_random_10x.png
+  [OK]   fold_map.png → Manuscript/figures/main/Fig06_spatial_fold_assignment.png
+  [OK]   per_fold_performance.png → Manuscript/figures/main/Fig07_per_fold_performance_10x.png
+  [OK]   shap_importance_comparison.png → Manuscript/figures/main/Fig08_shap_importance_comparison_10x.png
+  [OK]   shap_beeswarm_rf.png → Manuscript/figures/main/Fig09_shap_beeswarm_rf_10x.png
+  [OK]   shap_beeswarm_xgboost.png → Manuscript/figures/main/Fig10_shap_beeswarm_xgboost_10x.png
+  [OK]   shap_beeswarm_catboost.png → Manuscript/figures/main/Fig11_shap_beeswarm_catboost_10x.png
+  [OK]   shap_beeswarm_dnn.png → Manuscript/figures/main/Fig12_shap_beeswarm_dnn_10x.png
+  [OK]   shap_rank_stability.png → Manuscript/figures/main/Fig13_shap_rank_stability_all_sizes.png
+  [OK]   class_area_comparison.png → Manuscript/figures/main/Fig14_class_area_comparison.png
+  [OK]   flood_area_comparison.png → Manuscript/figures/main/Fig15_flood_area_comparison.png
+  [OK]   threshold_probability_dist.png → Manuscript/figures/main/Fig16_threshold_probability_distributions.png
+  [OK]   Fig1_Probability_Maps.png → Manuscript/figures/main/Fig17_probability_maps.png
+  [OK]   Fig2_Susceptibility_5class.png → Manuscript/figures/main/Fig18_susceptibility_5class_maps.png
+  [OK]   Fig3_Binary_Maps.png → Manuscript/figures/main/Fig19_binary_flood_maps.png
+  [OK]   Fig4_Ensemble_Main.png → Manuscript/figures/main/Fig20_ensemble_main_map.png
+  [OK]   Fig5_Spatial_Agreement.png → Manuscript/figures/main/Fig21_spatial_agreement_map.png
+  --- figures/supplementary/ ---
+  [OK]   roc_validation.png → Manuscript/figures/supplementary/FigS01_roc_1x.png
+  [OK]   confusion_matrices.png → Manuscript/figures/supplementary/FigS02_confusion_1x.png
+  [OK]   csi_threshold_curves.png → Manuscript/figures/supplementary/FigS03_csi_curves_1x.png
+  [OK]   spatial_cv_comparison.png → Manuscript/figures/supplementary/FigS04_spatial_cv_1x.png
+  [OK]   shap_importance_comparison.png → Manuscript/figures/supplementary/FigS05_shap_1x.png
+  [OK]   roc_validation.png → Manuscript/figures/supplementary/FigS06_roc_2x.png
+  [OK]   confusion_matrices.png → Manuscript/figures/supplementary/FigS07_confusion_2x.png
+  [OK]   csi_threshold_curves.png → Manuscript/figures/supplementary/FigS08_csi_curves_2x.png
+  [OK]   spatial_cv_comparison.png → Manuscript/figures/supplementary/FigS09_spatial_cv_2x.png
+  [OK]   shap_importance_comparison.png → Manuscript/figures/supplementary/FigS10_shap_2x.png
+  [OK]   roc_validation.png → Manuscript/figures/supplementary/FigS11_roc_3x.png
+  [OK]   confusion_matrices.png → Manuscript/figures/supplementary/FigS12_confusion_3x.png
+  [OK]   csi_threshold_curves.png → Manuscript/figures/supplementary/FigS13_csi_curves_3x.png
+  [OK]   spatial_cv_comparison.png → Manuscript/figures/supplementary/FigS14_spatial_cv_3x.png
+  [OK]   shap_importance_comparison.png → Manuscript/figures/supplementary/FigS15_shap_3x.png
+  [OK]   roc_validation.png → Manuscript/figures/supplementary/FigS16_roc_4x.png
+  [OK]   confusion_matrices.png → Manuscript/figures/supplementary/FigS17_confusion_4x.png
+  [OK]   csi_threshold_curves.png → Manuscript/figures/supplementary/FigS18_csi_curves_4x.png
+  [OK]   spatial_cv_comparison.png → Manuscript/figures/supplementary/FigS19_spatial_cv_4x.png
+  [OK]   shap_importance_comparison.png → Manuscript/figures/supplementary/FigS20_shap_4x.png
+  [OK]   roc_validation.png → Manuscript/figures/supplementary/FigS21_roc_10x.png
+  [OK]   confusion_matrices.png → Manuscript/figures/supplementary/FigS22_confusion_10x.png
+  [OK]   csi_threshold_curves.png → Manuscript/figures/supplementary/FigS23_csi_curves_10x.png
+  [OK]   spatial_cv_comparison.png → Manuscript/figures/supplementary/FigS24_spatial_cv_10x.png
+  [OK]   shap_importance_comparison.png → Manuscript/figures/supplementary/FigS25_shap_10x.png
+  --- figures/maps/ ---
+  [OK]   Prob_Ensemble_mean.png → Manuscript/figures/maps/individual/Prob_Ensemble_mean.png
+  [OK]   5class_DNN.png → Manuscript/figures/maps/individual/5class_DNN.png
+  [OK]   Prob_XGBoost.png → Manuscript/figures/maps/individual/Prob_XGBoost.png
+  [OK]   Binary_RF.png → Manuscript/figures/maps/individual/Binary_RF.png
+  [OK]   Prob_DNN.png → Manuscript/figures/maps/individual/Prob_DNN.png
+  [OK]   5class_Ensemble_mean.png → Manuscript/figures/maps/individual/5class_Ensemble_mean.png
+  [OK]   5class_XGBoost.png → Manuscript/figures/maps/individual/5class_XGBoost.png
+  [OK]   Prob_CatBoost.png → Manuscript/figures/maps/individual/Prob_CatBoost.png
+  [OK]   5class_RF.png → Manuscript/figures/maps/individual/5class_RF.png
+  [OK]   Binary_CatBoost.png → Manuscript/figures/maps/individual/Binary_CatBoost.png
+  [OK]   Binary_DNN.png → Manuscript/figures/maps/individual/Binary_DNN.png
+  [OK]   Binary_XGBoost.png → Manuscript/figures/maps/individual/Binary_XGBoost.png
+  [OK]   5class_CatBoost.png → Manuscript/figures/maps/individual/5class_CatBoost.png
+  [OK]   Binary_Ensemble_mean.png → Manuscript/figures/maps/individual/Binary_Ensemble_mean.png
+  [OK]   Prob_RF.png → Manuscript/figures/maps/individual/Prob_RF.png
+  [OK]   subbasin_binary_stats.csv → Manuscript/figures/maps/subbasin/subbasin_binary_stats.csv
+  [OK]   map_prob_ensemble.png → Manuscript/figures/maps/subbasin/map_prob_ensemble.png
+  [OK]   subbasin_class_dist.csv → Manuscript/figures/maps/subbasin/subbasin_class_dist.csv
+  [OK]   chart_class_dist_stacked.png → Manuscript/figures/maps/subbasin/chart_class_dist_stacked.png
+  [OK]   map_agreement.png → Manuscript/figures/maps/subbasin/map_agreement.png
+  [OK]   subbasin_prob_stats.csv → Manuscript/figures/maps/subbasin/subbasin_prob_stats.csv
+  [OK]   chart_susceptible_bar.png → Manuscript/figures/maps/subbasin/chart_susceptible_bar.png
+  [OK]   chart_parent_basin_summary.png → Manuscript/figures/maps/subbasin/chart_parent_basin_summary.png
+  [OK]   chart_prob_heatmap.png → Manuscript/figures/maps/subbasin/chart_prob_heatmap.png
+  [OK]   map_susceptible_pct.png → Manuscript/figures/maps/subbasin/map_susceptible_pct.png
+  [OK]   subbasin_agreement_stats.csv → Manuscript/figures/maps/subbasin/subbasin_agreement_stats.csv
+
+============================================================
+4. Generating tables …
+============================================================
+  [OK] Table01_conditioning_factors.csv
+  [OK] Table02_sample_sizes.csv
+  [OK]   multiscale_validation.csv → Manuscript/tables/main/Table03_validation_metrics_all_sizes.csv
+  [OK]   multiscale_cv_summary.csv → Manuscript/tables/main/Table04_spatial_cv_results.csv
+  [OK] Table05_threshold_summary_all_sizes.csv
+  [OK]   class_area_statistics.csv → Manuscript/tables/main/Table06_class_area_statistics.csv
+  [OK]   binary_flood_statistics.csv → Manuscript/tables/main/Table07_binary_flood_statistics.csv
+  [OK] Table08_shap_importance_top5.csv
+  [OK] Table09_model_configurations.csv
+  --- Supplementary tables ---
+  [OK]   per_fold_metrics.csv → Manuscript/tables/supplementary/TableS01_per_fold_metrics_1x.csv
+  [OK]   validation_metrics.csv → Manuscript/tables/supplementary/TableS06_validation_metrics_1x.csv
+  [OK]   per_fold_metrics.csv → Manuscript/tables/supplementary/TableS02_per_fold_metrics_2x.csv
+  [OK]   validation_metrics.csv → Manuscript/tables/supplementary/TableS07_validation_metrics_2x.csv
+  [OK]   per_fold_metrics.csv → Manuscript/tables/supplementary/TableS03_per_fold_metrics_3x.csv
+  [OK]   validation_metrics.csv → Manuscript/tables/supplementary/TableS08_validation_metrics_3x.csv
+  [OK]   per_fold_metrics.csv → Manuscript/tables/supplementary/TableS04_per_fold_metrics_4x.csv
+  [OK]   validation_metrics.csv → Manuscript/tables/supplementary/TableS09_validation_metrics_4x.csv
+  [OK]   per_fold_metrics.csv → Manuscript/tables/supplementary/TableS05_per_fold_metrics_10x.csv
+  [OK]   validation_metrics.csv → Manuscript/tables/supplementary/TableS10_validation_metrics_10x.csv
+
+============================================================
+5. Copying results CSVs …
+============================================================
+  [OK]   multiscale_validation.csv → Manuscript/results/validation/multiscale_validation.csv
+  [OK]   multiscale_cv_summary.csv → Manuscript/results/spatial_cv/multiscale_cv_summary.csv
+  [OK]   shap_importance_all_sizes.csv → Manuscript/results/shap/shap_importance_all_sizes.csv
+  [OK]   binary_flood_statistics.csv → Manuscript/results/area_statistics/binary_flood_statistics.csv
+  [OK]   class_area_statistics.csv → Manuscript/results/area_statistics/class_area_statistics.csv
+  [OK]   frequency_ratio.csv → Manuscript/results/area_statistics/frequency_ratio.csv
+  [OK]   validation_metrics.csv → Manuscript/results/validation/1x/validation_metrics.csv
+  [OK]   threshold_summary.csv → Manuscript/results/validation/1x/threshold_summary.csv
+  [OK]   mean_metrics.csv → Manuscript/results/spatial_cv/1x/mean_metrics.csv
+  [OK]   per_fold_metrics.csv → Manuscript/results/spatial_cv/1x/per_fold_metrics.csv
+  [OK]   shap_importance_all_models.csv → Manuscript/results/shap/1x/shap_importance_all_models.csv
+  [OK]   validation_metrics.csv → Manuscript/results/validation/2x/validation_metrics.csv
+  [OK]   threshold_summary.csv → Manuscript/results/validation/2x/threshold_summary.csv
+  [OK]   mean_metrics.csv → Manuscript/results/spatial_cv/2x/mean_metrics.csv
+  [OK]   per_fold_metrics.csv → Manuscript/results/spatial_cv/2x/per_fold_metrics.csv
+  [OK]   shap_importance_all_models.csv → Manuscript/results/shap/2x/shap_importance_all_models.csv
+  [OK]   validation_metrics.csv → Manuscript/results/validation/3x/validation_metrics.csv
+  [OK]   threshold_summary.csv → Manuscript/results/validation/3x/threshold_summary.csv
+  [OK]   mean_metrics.csv → Manuscript/results/spatial_cv/3x/mean_metrics.csv
+  [OK]   per_fold_metrics.csv → Manuscript/results/spatial_cv/3x/per_fold_metrics.csv
+  [OK]   shap_importance_all_models.csv → Manuscript/results/shap/3x/shap_importance_all_models.csv
+  [OK]   validation_metrics.csv → Manuscript/results/validation/4x/validation_metrics.csv
+  [OK]   threshold_summary.csv → Manuscript/results/validation/4x/threshold_summary.csv
+  [OK]   mean_metrics.csv → Manuscript/results/spatial_cv/4x/mean_metrics.csv
+  [OK]   per_fold_metrics.csv → Manuscript/results/spatial_cv/4x/per_fold_metrics.csv
+  [OK]   shap_importance_all_models.csv → Manuscript/results/shap/4x/shap_importance_all_models.csv
+  [OK]   validation_metrics.csv → Manuscript/results/validation/10x/validation_metrics.csv
+  [OK]   threshold_summary.csv → Manuscript/results/validation/10x/threshold_summary.csv
+  [OK]   mean_metrics.csv → Manuscript/results/spatial_cv/10x/mean_metrics.csv
+  [OK]   per_fold_metrics.csv → Manuscript/results/spatial_cv/10x/per_fold_metrics.csv
+  [OK]   shap_importance_all_models.csv → Manuscript/results/shap/10x/shap_importance_all_models.csv
+
+============================================================
+6. Generating workflow diagram …
+============================================================
+  [OK] docs/workflow_diagram.png
+
+============================================================
+7. Copying summary report …
+============================================================
+  [SKIP] not found: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/FSM_Slovenia_Summary_Report.docx
+
+============================================================
+8. Writing README.md …
+============================================================
+  [OK] README.md
+
+============================================================
+9. Writing .gitignore …
+============================================================
+  [OK] .gitignore
+
+============================================================
+10. Writing environment.yml …
+============================================================
+  [OK] environment.yml
+
+============================================================
+11. Writing requirements.txt …
+============================================================
+  [OK] requirements.txt
+
+============================================================
+12. Writing LICENSE …
+============================================================
+  [OK] LICENSE
+
+============================================================
+SUMMARY
+============================================================
+  Files copied successfully : 117
+  Files skipped / not found: 10
+  Files generated          : 11
+
+  Manuscript root: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Manuscript
+
+  Skipped sources (review if needed):
+    - /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/prepare_rasters.py
+    - /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/align_and_collinearity.py
+    - /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/train_models_multisample.py
+    - /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/predict_probability_maps.py
+    - /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/predict_probability_maps_1x_4x.py
+    - /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/validate_classify_spatial_cv_multiscale.py
+    - /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/shap_analysis.py
+    - /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/classify_area_analysis.py
+    - /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Scripts/generate_summary_report.py
+    - /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/FSM_Slovenia_Summary_Report.docx
+
+Done.

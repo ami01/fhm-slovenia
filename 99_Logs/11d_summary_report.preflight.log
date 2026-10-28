@@ -1,0 +1,12 @@
+
+=== preflight: 11d_generate_summary_report.py ===
+  syntax            OK
+  undefined names   OK
+  imports           OK
+  input dir         OK    08_Validation (26 entries)
+  input dir         OK    09_Analysis (17 entries)
+  input dir         OK    09_Analysis/shap (7 entries)
+  input dir         OK    09_Analysis/spatial_cv (13 entries)
+  --> PASS
+
+1/1 passed

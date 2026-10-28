@@ -1,0 +1,85 @@
+=================================================================
+STEP 1 — Loading test samples & extracting map probabilities
+=================================================================
+Test samples (10x): 199,495  |  Flood: 99,575  |  No-flood: 99,920
+  RF                    extracted 199,495 valid probs  | mean=0.5002  min=0.0000  max=0.9999
+  XGBoost               extracted 199,495 valid probs  | mean=0.5006  min=0.0000  max=0.9999
+  CatBoost              extracted 199,495 valid probs  | mean=0.4997  min=0.0000  max=0.9999
+  DNN                   extracted 199,495 valid probs  | mean=0.5051  min=0.0000  max=0.9995
+  Ensemble_mean         extracted 199,495 valid probs  | mean=0.5014  min=0.0000  max=0.9993
+
+Samples with all models valid: 199,495
+
+=================================================================
+STEP 2 — Optimal threshold search (CSI & Youden)
+=================================================================
+
+  Model                  CSI thresh    CSI val  Youden thresh   Youden val
+  -------------------- ------------ ---------- -------------- ------------
+  RF                         0.5172     0.9186         0.5616       0.9142
+  XGBoost                    0.5369     0.9406         0.5468       0.9382
+  CatBoost                   0.5222     0.9255         0.5222       0.9217
+  DNN                        0.5320     0.9085         0.5320       0.9020
+  Ensemble_mean              0.5566     0.9280         0.5714       0.9245
+
+Saved: threshold_summary.csv
+
+=================================================================
+STEP 3 — Computing quantile breaks for 5-class maps
+=================================================================
+  RF                    q20=0.0000  q40=0.0010  q60=0.0106  q80=0.1407
+  XGBoost               q20=0.0000  q40=0.0000  q60=0.0007  q80=0.0322
+  CatBoost              q20=0.0000  q40=0.0002  q60=0.0029  q80=0.0733
+  DNN                   q20=0.0001  q40=0.0006  q60=0.0036  q80=0.0998
+  Ensemble_mean         q20=0.0001  q40=0.0006  q60=0.0053  q80=0.0932
+
+=================================================================
+STEP 4 — Writing binary & 5-class classified maps
+=================================================================
+  RF                    thresh=0.5172  → binary + 5-class saved
+  XGBoost               thresh=0.5369  → binary + 5-class saved
+  CatBoost              thresh=0.5222  → binary + 5-class saved
+  DNN                   thresh=0.5320  → binary + 5-class saved
+  Ensemble_mean         thresh=0.5566  → binary + 5-class saved
+
+=================================================================
+STEP 5 — Validation metrics at optimal thresholds
+=================================================================
+
+  Model                  Thresh     AUC      F1     CSI    Sens    Spec   Kappa
+  -------------------- -------- ------- ------- ------- ------- ------- -------
+  RF                     0.5172  0.9903  0.9576  0.9186  0.9755  0.9383  0.9138
+  XGBoost                0.5369  0.9941  0.9694  0.9406  0.9824  0.9557  0.9381
+  CatBoost               0.5222  0.9910  0.9613  0.9255  0.9759  0.9458  0.9216
+  DNN                    0.5320  0.9860  0.9520  0.9085  0.9752  0.9268  0.9019
+  Ensemble_mean          0.5566  0.9921  0.9627  0.9280  0.9765  0.9479  0.9244
+
+Saved: validation_metrics.csv
+
+STEP 6 — Generating plots
+  Saved: roc_validation.png, metrics_comparison.png, confusion_matrices.png, csi_threshold_curves.png
+
+STEP 7 — Generating validation report (Word)
+  Saved: validation_report.docx
+
+=================================================================
+SUMMARY
+=================================================================
+
+Model                  Thresh     AUC     CSI      F1   Kappa
+-------------------- -------- ------- ------- ------- -------
+XGBoost                0.5369  0.9941  0.9406  0.9694  0.9381
+Ensemble_mean          0.5566  0.9921  0.9280  0.9627  0.9244
+CatBoost               0.5222  0.9910  0.9255  0.9613  0.9216
+RF                     0.5172  0.9903  0.9186  0.9576  0.9138
+DNN                    0.5320  0.9860  0.9085  0.9520  0.9019
+
+5-class quantile breaks:
+  RF                    0.0000 | 0.0010 | 0.0106 | 0.1407
+  XGBoost               0.0000 | 0.0000 | 0.0007 | 0.0322
+  CatBoost              0.0000 | 0.0002 | 0.0029 | 0.0733
+  DNN                   0.0001 | 0.0006 | 0.0036 | 0.0998
+  Ensemble_mean         0.0001 | 0.0006 | 0.0053 | 0.0932
+
+Classified maps : /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/07_Classified_Maps
+Validation      : /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/08_Validation

@@ -1,0 +1,13 @@
+===================================================================
+FSM Slovenia pipeline (LULC)   2026-07-29 09:53:52
+===================================================================
+[09:53:52] START 08c_multiscale
+[19:30:46] OK    08c_multiscale  (9h 36m 54s)
+[19:30:46] START 08d_shap
+[19:30:55] FAIL  08d_shap  (exit 1, 0m 09s)
+--- last 20 lines of 99_Logs/08d_shap.log ---
+Traceback (most recent call last):
+  File "/home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/00_Scripts/08d_shap_analysis.py", line 50, in <module>
+    import joblib, shap
+ModuleNotFoundError: No module named 'shap'
+ERROR conda.cli.main_run:execute(127): `conda run python3 00_Scripts/08d_shap_analysis.py` failed. (See above for error)

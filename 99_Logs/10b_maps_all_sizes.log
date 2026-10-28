@@ -1,0 +1,230 @@
+Loading vector layers ...
+Loading sub-basin layer ...
+  31 sub-basins loaded
+
+=================================================================
+  SIZE: 1x
+=================================================================
+  Building spatial agreement map [1x] ...
+    Agreement TIF saved: spatial_agreement_map.tif
+  Fig 1: Probability Maps [1x] ...
+    Saved: Fig1_Probability_Maps.png
+  Fig 2: 5-Class Susceptibility Maps [1x] ...
+    Saved: Fig2_Susceptibility_5class.png
+  Fig 3: Binary Maps [1x] ...
+    Saved: Fig3_Binary_Maps.png
+  Fig 4: Ensemble Main [1x] ...
+    Saved: Fig4_Ensemble_Main.png
+  Fig 5: Spatial Agreement [1x] ...
+    Saved: Fig5_Spatial_Agreement.png
+  Individual maps [1x] ...
+    Saved: Prob_RF.png
+    Saved: 5class_RF.png
+    Saved: Binary_RF.png
+    Saved: Prob_XGBoost.png
+    Saved: 5class_XGBoost.png
+    Saved: Binary_XGBoost.png
+    Saved: Prob_CatBoost.png
+    Saved: 5class_CatBoost.png
+    Saved: Binary_CatBoost.png
+    Saved: Prob_DNN.png
+    Saved: 5class_DNN.png
+    Saved: Binary_DNN.png
+    Saved: Prob_Ensemble_mean.png
+    Saved: 5class_Ensemble_mean.png
+    Saved: Binary_Ensemble_mean.png
+  Subbasin analysis [1x] ...
+    Saved: map_prob_ensemble.png
+    Saved: map_susceptible_pct.png
+    Saved: map_agreement.png
+    Saved: chart_prob_heatmap.png
+    Saved: chart_susceptible_bar.png
+    Saved: chart_class_dist_stacked.png
+    Saved: chart_parent_basin_summary.png
+  [1x] done in 12.0 min
+
+=================================================================
+  SIZE: 2x
+=================================================================
+  Building spatial agreement map [2x] ...
+    Agreement TIF saved: spatial_agreement_map.tif
+  Fig 1: Probability Maps [2x] ...
+    Saved: Fig1_Probability_Maps.png
+  Fig 2: 5-Class Susceptibility Maps [2x] ...
+    Saved: Fig2_Susceptibility_5class.png
+  Fig 3: Binary Maps [2x] ...
+    Saved: Fig3_Binary_Maps.png
+  Fig 4: Ensemble Main [2x] ...
+    Saved: Fig4_Ensemble_Main.png
+  Fig 5: Spatial Agreement [2x] ...
+    Saved: Fig5_Spatial_Agreement.png
+  Individual maps [2x] ...
+    Saved: Prob_RF.png
+    Saved: 5class_RF.png
+    Saved: Binary_RF.png
+    Saved: Prob_XGBoost.png
+    Saved: 5class_XGBoost.png
+    Saved: Binary_XGBoost.png
+    Saved: Prob_CatBoost.png
+    Saved: 5class_CatBoost.png
+    Saved: Binary_CatBoost.png
+    Saved: Prob_DNN.png
+    Saved: 5class_DNN.png
+    Saved: Binary_DNN.png
+    Saved: Prob_Ensemble_mean.png
+    Saved: 5class_Ensemble_mean.png
+    Saved: Binary_Ensemble_mean.png
+  Subbasin analysis [2x] ...
+    Saved: map_prob_ensemble.png
+    Saved: map_susceptible_pct.png
+    Saved: map_agreement.png
+    Saved: chart_prob_heatmap.png
+    Saved: chart_susceptible_bar.png
+    Saved: chart_class_dist_stacked.png
+    Saved: chart_parent_basin_summary.png
+  [2x] done in 12.5 min
+
+=================================================================
+  SIZE: 3x
+=================================================================
+  Building spatial agreement map [3x] ...
+    Agreement TIF saved: spatial_agreement_map.tif
+  Fig 1: Probability Maps [3x] ...
+    Saved: Fig1_Probability_Maps.png
+  Fig 2: 5-Class Susceptibility Maps [3x] ...
+    Saved: Fig2_Susceptibility_5class.png
+  Fig 3: Binary Maps [3x] ...
+    Saved: Fig3_Binary_Maps.png
+  Fig 4: Ensemble Main [3x] ...
+    Saved: Fig4_Ensemble_Main.png
+  Fig 5: Spatial Agreement [3x] ...
+    Saved: Fig5_Spatial_Agreement.png
+  Individual maps [3x] ...
+    Saved: Prob_RF.png
+    Saved: 5class_RF.png
+    Saved: Binary_RF.png
+    Saved: Prob_XGBoost.png
+    Saved: 5class_XGBoost.png
+    Saved: Binary_XGBoost.png
+    Saved: Prob_CatBoost.png
+    Saved: 5class_CatBoost.png
+    Saved: Binary_CatBoost.png
+    Saved: Prob_DNN.png
+    Saved: 5class_DNN.png
+    Saved: Binary_DNN.png
+    Saved: Prob_Ensemble_mean.png
+    Saved: 5class_Ensemble_mean.png
+    Saved: Binary_Ensemble_mean.png
+  Subbasin analysis [3x] ...
+    Saved: map_prob_ensemble.png
+    Saved: map_susceptible_pct.png
+    Saved: map_agreement.png
+    Saved: chart_prob_heatmap.png
+    Saved: chart_susceptible_bar.png
+    Saved: chart_class_dist_stacked.png
+    Saved: chart_parent_basin_summary.png
+  [3x] done in 11.8 min
+
+=================================================================
+  SIZE: 4x
+=================================================================
+  Building spatial agreement map [4x] ...
+    Agreement TIF saved: spatial_agreement_map.tif
+  Fig 1: Probability Maps [4x] ...
+    Saved: Fig1_Probability_Maps.png
+  Fig 2: 5-Class Susceptibility Maps [4x] ...
+    Saved: Fig2_Susceptibility_5class.png
+  Fig 3: Binary Maps [4x] ...
+    Saved: Fig3_Binary_Maps.png
+  Fig 4: Ensemble Main [4x] ...
+    Saved: Fig4_Ensemble_Main.png
+  Fig 5: Spatial Agreement [4x] ...
+    Saved: Fig5_Spatial_Agreement.png
+  Individual maps [4x] ...
+    Saved: Prob_RF.png
+    Saved: 5class_RF.png
+    Saved: Binary_RF.png
+    Saved: Prob_XGBoost.png
+    Saved: 5class_XGBoost.png
+    Saved: Binary_XGBoost.png
+    Saved: Prob_CatBoost.png
+    Saved: 5class_CatBoost.png
+    Saved: Binary_CatBoost.png
+    Saved: Prob_DNN.png
+    Saved: 5class_DNN.png
+    Saved: Binary_DNN.png
+    Saved: Prob_Ensemble_mean.png
+    Saved: 5class_Ensemble_mean.png
+    Saved: Binary_Ensemble_mean.png
+  Subbasin analysis [4x] ...
+    Saved: map_prob_ensemble.png
+    Saved: map_susceptible_pct.png
+    Saved: map_agreement.png
+    Saved: chart_prob_heatmap.png
+    Saved: chart_susceptible_bar.png
+    Saved: chart_class_dist_stacked.png
+    Saved: chart_parent_basin_summary.png
+  [4x] done in 12.1 min
+
+=================================================================
+  SIZE: 10x
+=================================================================
+  Building spatial agreement map [10x] ...
+    Agreement TIF saved: spatial_agreement_map.tif
+  Fig 1: Probability Maps [10x] ...
+    Saved: Fig1_Probability_Maps.png
+  Fig 2: 5-Class Susceptibility Maps [10x] ...
+    Saved: Fig2_Susceptibility_5class.png
+  Fig 3: Binary Maps [10x] ...
+    Saved: Fig3_Binary_Maps.png
+  Fig 4: Ensemble Main [10x] ...
+    Saved: Fig4_Ensemble_Main.png
+  Fig 5: Spatial Agreement [10x] ...
+    Saved: Fig5_Spatial_Agreement.png
+  Individual maps [10x] ...
+    Saved: Prob_RF.png
+    Saved: 5class_RF.png
+    Saved: Binary_RF.png
+    Saved: Prob_XGBoost.png
+    Saved: 5class_XGBoost.png
+    Saved: Binary_XGBoost.png
+    Saved: Prob_CatBoost.png
+    Saved: 5class_CatBoost.png
+    Saved: Binary_CatBoost.png
+    Saved: Prob_DNN.png
+    Saved: 5class_DNN.png
+    Saved: Binary_DNN.png
+    Saved: Prob_Ensemble_mean.png
+    Saved: 5class_Ensemble_mean.png
+    Saved: Binary_Ensemble_mean.png
+  Subbasin analysis [10x] ...
+    Saved: map_prob_ensemble.png
+    Saved: map_susceptible_pct.png
+    Saved: map_agreement.png
+    Saved: chart_prob_heatmap.png
+    Saved: chart_susceptible_bar.png
+    Saved: chart_class_dist_stacked.png
+    Saved: chart_parent_basin_summary.png
+  [10x] done in 11.9 min
+
+=================================================================
+  CROSS-SIZE COMPARISON FIGURES
+=================================================================
+  Cross-size ensemble probability map panel ...
+  Cross-size % susceptible map panel ...
+  Cross-size basin probability trend lines ...
+    Saved: comparison_basin_prob_trends.png
+  Cross-size % susceptible per model across sizes ...
+    Saved: comparison_model_pct_susceptible_by_size.png
+
+=================================================================
+ALL DONE  (60.9 min total)
+=================================================================
+  1x: 5 panel + 15 individual + 7 subbasin figures
+  2x: 5 panel + 15 individual + 7 subbasin figures
+  3x: 5 panel + 15 individual + 7 subbasin figures
+  4x: 5 panel + 15 individual + 7 subbasin figures
+  10x: 5 panel + 15 individual + 7 subbasin figures
+  comparison/: 4 figures
+
+All outputs under: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Manuscript/figures/

@@ -1,0 +1,9 @@
+
+=== preflight: 10d_setup_manuscript_folder.py ===
+  syntax            OK
+  undefined names   OK
+  imports           OK
+  input dir         OK    09_Analysis/shap (7 entries)
+  --> PASS
+
+1/1 passed

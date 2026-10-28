@@ -1,0 +1,9 @@
+{
+  "size": "10x",
+  "n_samples": 997473,
+  "block_offset_m": 25000.0,
+  "blocks": 19,
+  "seed": 42,
+  "minutes": 62.02498066027959,
+  "gpu": "NVIDIA L40S"
+}

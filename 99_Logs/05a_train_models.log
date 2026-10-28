@@ -1,0 +1,96 @@
+=================================================================
+STEP 1 — Loading feature list & rasters
+=================================================================
+Features (20): Distance_to_River, Distance_to_Road, Hgk_grouped, LULC, Pedoloska_grouped, River_Density, aspect, drainage_density, elevation, flow_accumulation, hand, lito_poly_250_d96_grouped, ls_factor, plan_curvature, profile_curvature, slovenia_annual_max_daily_p90_3794_12m5, spi, tri, twi, valley_depth
+
+STEP 2 — Balanced sampling with coordinates
+=================================================================
+Flood    : 50,000  |  No-flood : 50,000  |  Total : 100,000
+Reading 20 feature rasters ...
+  Distance_to_River
+  Distance_to_Road
+  Hgk_grouped
+  LULC
+  Pedoloska_grouped
+  River_Density
+  aspect
+  drainage_density
+  elevation
+  flow_accumulation
+  hand
+  lito_poly_250_d96_grouped
+  ls_factor
+  plan_curvature
+  profile_curvature
+  slovenia_annual_max_daily_p90_3794_12m5
+  spi
+  tri
+  twi
+  valley_depth
+
+Samples after NaN drop: 99,732  (dropped 268)
+  Flood (1)   : 49,782
+  No-flood (0): 49,950
+
+STEP 3 — Train/test split (80/20 stratified)
+=================================================================
+Train: 79,785  |  Test: 19,947
+  Train flood ratio: 0.499  |  Test flood ratio: 0.499
+
+STEP 4 — Saving samples (CSV + SHP)
+=================================================================
+  train   : 79,785 samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_train.csv
+           shapefile → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_train.shp
+  test    : 19,947 samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_test.csv
+           shapefile → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples/samples_test.shp
+
+STEP 5 — Model training
+=================================================================
+
+[1/3] Random Forest (sklearn) ...
+  Saved: model_rf.pkl
+
+[2/3] XGBoost (GPU hist) ...
+  Best round : 694
+  Saved: model_xgb.json
+
+[3/3] CatBoost (GPU) ...
+Warning: less than 75% GPU memory available for training. Free: 2745.3125 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+  Best round : 967
+  Saved: model_cat.cbm
+
+STEP 6 — Evaluation metrics
+=================================================================
+
+Random Forest
+  AUC=0.9821  F1=0.9399  CSI=0.8866  Sensitivity=0.9632  Specificity=0.9138  Kappa=0.877
+
+XGBoost
+  AUC=0.9877  F1=0.9522  CSI=0.9088  Sensitivity=0.9683  Specificity=0.9348  Kappa=0.903
+
+CatBoost
+  AUC=0.9864  F1=0.9502  CSI=0.9051  Sensitivity=0.9663  Specificity=0.9326  Kappa=0.8988
+
+Metrics saved: metrics_all_models.csv
+
+STEP 7 — Generating plots
+=================================================================
+  Saved: roc_curves.png
+  Saved: pr_curves.png
+  Saved: feature_importance_random_forest.png
+  Saved: feature_importance_xgboost.png
+  Saved: feature_importance_catboost.png
+  Saved: model_comparison.png
+
+=================================================================
+FINAL RESULTS
+=================================================================
+        Model    AUC     F1    CSI  Sensitivity  Specificity  Kappa
+      XGBoost 0.9877 0.9522 0.9088       0.9683       0.9348 0.9030
+     CatBoost 0.9864 0.9502 0.9051       0.9663       0.9326 0.8988
+Random Forest 0.9821 0.9399 0.8866       0.9632       0.9138 0.8770
+
+Models  → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/04_Models
+Samples → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/03_Samples
+Plots   → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/05_Results

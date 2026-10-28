@@ -1,0 +1,7 @@
+predictor,AUC
+ensemble map,0.7303
+distance to river (−),0.6881
+HAND (−),0.6617
+elevation (−),0.4407
+"HAND + distance to river + elevation, 5-fold logistic on the test sites",0.7187
+"ensemble + the three terrain variables, 5-fold logistic",0.7529

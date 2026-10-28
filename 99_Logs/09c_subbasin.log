@@ -1,0 +1,113 @@
+Sub-basins loaded: 31
+          basin_name  parent_basin    area_km2
+       Ormoška Drava Porečje Drave  156.772572
+         Mejna Drava Porečje Drave   40.516336
+                Meža Porečje Drave  545.137205
+       Ptujska Drava Porečje Drave  348.358635
+            Dravinja Porečje Drave  814.307984
+      Gradiška Drava Porečje Drave  155.258568
+             Pesnica Porečje Drave  540.756214
+       Zgornja Drava Porečje Drave  669.802637
+               Kolpa Porečje Kolpe 1102.534370
+Velika Krka z Ledavo  Porečje Mure  818.350885
+        Spodnja Mura  Porečje Mure  568.962286
+                Zala  Porečje Mure    2.228397
+               Torok  Porečje Mure    1.332078
+     Slovenska Obala Porečje Obale  502.337044
+               Timav Porečje Obale  869.453762
+     Slovenska Istra Porečje Obale  139.407700
+        Zgornja Sava  Porečje Save 1526.629346
+                Sora  Porečje Save  647.865856
+        Spodnja Sava  Porečje Save  576.637223
+       Litijska Sava  Porečje Save  523.458173
+             Savinja  Porečje Save 1852.839665
+    Ljubljanska Sava  Porečje Save  656.745518
+         Ljubljanica  Porečje Save 1863.560663
+          Krška Sava  Porečje Save  756.865329
+                Krka  Porečje Save 2251.719023
+              Nadiža  Porečje Soče   70.062639
+             Idrijca  Porečje Soče  643.675396
+              Vipava  Porečje Soče  589.290983
+        Srednja Soča  Porečje Soče  344.176331
+        Zgornja Soča  Porečje Soče  605.875081
+              Idrija  Porečje Soče   86.085560
+
+── Probability zonal stats ──
+  RF: done
+  XGBoost: done
+  CatBoost: done
+  DNN: done
+  Ensemble_mean: done
+  Saved: subbasin_prob_stats.csv
+
+── Binary zonal stats ──
+  RF: done
+  XGBoost: done
+  CatBoost: done
+  DNN: done
+  Ensemble_mean: done
+  Saved: subbasin_binary_stats.csv
+
+── 5-class distribution (Ensemble) ──
+  Saved: subbasin_class_dist.csv
+
+── Spatial agreement zonal stats ──
+  Saved: subbasin_agreement_stats.csv
+
+── Summary (Ensemble) ──
+          basin_name  ens_prob_mean  ens_pct_susc  pct_very_high  pct_all5_agree
+        Spodnja Mura         0.3619         32.32          56.83           48.03
+Velika Krka z Ledavo         0.3270         29.91          50.62           42.97
+             Pesnica         0.2525         23.70          35.25           32.44
+       Ptujska Drava         0.2382         18.80          43.16           34.15
+      Gradiška Drava         0.2284         17.67          40.89           32.89
+       Ormoška Drava         0.2118         19.75          31.68           27.55
+            Dravinja         0.1992         18.76          29.21           25.98
+         Ljubljanica         0.1851         17.05          26.89           23.19
+    Ljubljanska Sava         0.1694         15.04          28.26           24.12
+        Spodnja Sava         0.1401         11.78          23.97           18.09
+              Vipava         0.1231         10.40          20.85           17.07
+     Slovenska Obala         0.1091          9.15          17.02           13.53
+                Krka         0.1074          8.91          18.21           14.85
+          Krška Sava         0.1068          9.33          16.56           14.34
+             Savinja         0.0966          8.25          16.50           13.85
+       Litijska Sava         0.0715          6.13          11.50            9.74
+              Idrija         0.0687          5.68          12.08            9.91
+         Mejna Drava         0.0665          4.24          14.19            9.35
+                Sora         0.0622          4.96          11.42            9.17
+        Zgornja Sava         0.0533          3.39          11.72            8.11
+              Nadiža         0.0530          3.81           9.72            7.28
+        Zgornja Soča         0.0502          3.67           9.51            7.31
+               Timav         0.0466          2.57           9.76            6.27
+               Kolpa         0.0428          2.35           9.22            5.82
+        Srednja Soča         0.0425          3.03           8.29            6.23
+     Slovenska Istra         0.0382          1.19          10.06            6.16
+       Zgornja Drava         0.0376          2.48           7.68            6.03
+                Meža         0.0371          2.84           7.34            5.57
+             Idrijca         0.0316          2.23           6.00            4.29
+                Zala         0.0284          0.00           2.16            0.00
+               Torok         0.0027          0.00           0.00            0.00
+
+── Map: ensemble probability ──
+  Saved: map_prob_ensemble.png
+
+── Map: % Very High susceptibility ──
+  Saved: map_susceptible_pct.png
+
+── Map: spatial agreement ──
+  Saved: map_agreement.png
+
+── Chart: probability heatmap ──
+  Saved: chart_prob_heatmap.png
+
+── Chart: % susceptible bar ──
+  Saved: chart_susceptible_bar.png
+
+── Chart: 5-class stacked bar ──
+  Saved: chart_class_dist_stacked.png
+
+── Chart: parent basin summary ──
+  Saved: chart_parent_basin_summary.png
+
+All outputs saved to:
+  /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Manuscript/figures/subbasin/

@@ -1,0 +1,10 @@
+incident log: 176818 rows, 2005-01-03 to 2026-02-13
+flood rows by type: pluvial 45156, riverine 30200, groundwater/sewer 4473
+flood rows on placeholder coordinates (reused >= 20 x): 15907 (19.9 %)
+unique flood sites: pluvial 16636, riverine 7623, groundwater/sewer 1525
+control sites (wind/snow/ice, never flood-reported): 28945
+sites inside Slovenia valid grid: 25780
+extremely-rare polygons revised after 2023-08-01: 2 (0.48 km2); August 2023 riverine sites inside them: 0
+catchments (n=222, >=10 km2 in Slovenia): rho(map_frac, sites_per_100km2) = 0.268 (p=5.2e-05)
+catchments (n=222, >=10 km2 in Slovenia): rho(map_frac, sites_outside_inv_per_100km2) = 0.136 (p=4.2e-02)
+catchments (n=222, >=10 km2 in Slovenia): rho(inv_frac, sites_per_100km2) = 0.248 (p=2.0e-04)

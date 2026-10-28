@@ -1,0 +1,43 @@
+stage,script,date,start,end,duration_s,duration_human,status,source,notes
+02a,raba_fractions.py,2026-07-27,13:30:38,14:04:43,2045,34m 05s,OK,log mtime,"1.7M polygons burned at 1.25 m then aggregated over 3978 tiles; includes shapefile read"
+02b,make_lulc.py,2026-07-27,14:21:00,14:22:00,60,1m 00s,OK,estimated,"modal band extraction to LULC.tif; interactive run, not separately logged"
+02c,qa_raba_fractions.py,2026-07-27,14:10:00,14:13:00,180,3m 00s,OK,estimated,"block-wise QA over 129.7M valid cells"
+11b,export_raba_lulc_conversion.py,2026-07-27,14:22:17,14:22:18,1,0m 01s,OK,file mtime,"RABA_LULC_Conversion.docx generation"
+04,iterative_collinearity.py,2026-07-27,14:29:08,14:40:10,662,11m 02s,OK,log mtime,"VIF elimination over 24 candidates -> 20 features; an earlier attempt failed on missing statsmodels"
+05a,train_models.py,2026-07-27,15:05:24,15:11:50,386,6m 26s,OK,log mtime,"RF + XGBoost + CatBoost at 50k/class on 20 features"
+05b,train_dnn.py (unsplit),2026-07-27,15:12:22,15:19:30,428,7m 08s,PARTIAL,log mtime,"trained and wrote maps, then crashed on the validation_metrics.csv merge (pre-split)"
+05b,train_dnn.py (phase A),2026-07-27,16:37:00,16:53:44,1004,16m 44s,OK,log mtime,"post-split rerun; wrote model + maps + handoff files"
+05d,dnn_seed_variation.py,2026-07-27,17:02:51,18:08:33,3942,65m 42s,OK,runner,"10 DNN seeds, 20 features incl. LULC"
+05c,train_models_multisample.py,2026-07-27,18:08:33,20:55:41,10028,167m 08s,OK,runner,"4 models x 5 sample sizes (1x/2x/3x/4x/10x)"
+06b,predict_probability_maps_all_sizes.py,2026-07-28,10:54:06,14:59:55,14749,4h 05m 49s,OK,runner,"25 full-grid inference passes (5 models x 5 sizes) over 259M cells; 16 GB output"
+05e,lulc_encoding_study.py (smoke),2026-07-28,12:18:39,12:25:59,440,7m 20s,OK,log mtime,"N_SEEDS=1 EPOCHS=3 dry run to validate the script before the full study"
+05e,lulc_encoding_study.py,2026-07-28,12:27:05,17:17:26,17421,4h 50m 21s,OK,file mtime,"4 variants x 10 seeds; ran concurrently with 06b so GPU-contended"
+07_threshold_classify_validate,07_threshold_classify_validate.py,2026-07-29,09:08:16,09:14:35,379,6m 19s,OK,runner,""
+08a_dnn_merge_validation,08a_dnn_merge_validation.py,2026-07-29,09:16:22,09:16:40,18,0m 18s,FAIL(exit 1),runner,""
+08a_dnn_merge_validation,08a_dnn_merge_validation.py,2026-07-29,09:19:14,09:20:32,78,1m 18s,FAIL(exit 1),runner,""
+08a_dnn_merge_validation,08a_dnn_merge_validation.py,2026-07-29,09:22:37,09:24:19,102,1m 42s,OK,runner,""
+08b_spatial_cv,08b_spatial_cv.py,2026-07-29,09:24:19,09:50:29,1570,26m 10s,OK,runner,""
+08c_multiscale,08c_validate_classify_spatial_cv_multiscale.py,2026-07-29,09:53:52,19:30:46,34614,9h 36m 54s,OK,runner,""
+08d_shap,08d_shap_analysis.py,2026-07-29,19:30:46,19:30:55,9,0m 09s,FAIL(exit 1),runner,""
+08d_shap,08d_shap_analysis.py,2026-07-30,09:41:59,09:42:20,21,0m 21s,FAIL(exit 1),runner,""
+08d_shap,08d_shap_analysis.py,2026-07-30,11:48:55,16:35:30,17195,4h 46m 35s,OK,runner,""
+09a_classify_area,09a_classify_area_analysis.py,2026-07-30,16:41:04,16:44:23,199,3m 19s,OK,runner,""
+09b_fr_area,09b_analysis_fr_area.py,2026-07-30,16:44:23,16:51:46,443,7m 23s,FAIL(exit 1),runner,""
+09b_fr_area,09b_analysis_fr_area.py,2026-07-31,09:25:58,09:32:35,397,6m 37s,OK,runner,""
+09c_subbasin,09c_subbasin_analysis.py,2026-07-31,09:32:35,09:40:16,461,7m 41s,OK,runner,""
+10a_figures,10a_figures_maps.py,2026-07-31,09:40:35,09:46:56,381,6m 21s,OK,runner,""
+10b_maps_all_sizes,10b_generate_maps_all_sizes.py,2026-07-31,09:47:03,10:48:08,3665,1h 01m 05s,OK,runner,""
+10c_fix_comparison,10c_fix_comparison_maps.py,2026-07-31,10:48:15,10:48:43,28,0m 28s,OK,runner,""
+10d_manuscript,10d_setup_manuscript_folder.py,2026-07-31,10:48:51,10:49:02,11,0m 11s,OK,runner,""
+11a_codebook,11a_export_codebook.py,2026-07-31,10:49:08,10:49:16,8,0m 08s,OK,runner,""
+11b_raba_lulc,11b_export_raba_lulc_conversion.py,2026-07-31,10:49:22,10:49:30,7,0m 07s,OK,runner,""
+11c_scripts_summary,11c_export_scripts_summary.py,2026-07-31,10:49:37,10:49:44,7,0m 07s,OK,runner,""
+11d_summary_report,11d_generate_summary_report.py,2026-07-31,10:49:51,10:50:01,10,0m 10s,OK,runner,""
+09b_fr_area,09b_analysis_fr_area.py,2026-07-31,11:07:50,11:15:04,434,7m 14s,OK,runner,""
+09e_cn_corroboration,09e_cn_corroboration.py,2026-09-16,14:28:43,14:29:54,71,1m 11s,OK,runner,added inventory-vs-CN comparison and partial correlation
+09i_incident_reports,09i_incident_report_validation.py,2026-09-16,14:30:15,14:31:33,78,1m 18s,OK,runner,new stage: independent validation vs civil-protection incident reports
+09i_incident_reports,09i_incident_report_validation.py,2026-09-16,14:32:17,14:33:37,80,1m 20s,OK,log mtime,rerun for figure layout only
+08g_fold_composition,08g_fold_composition.py,2026-10-23,12:11:07,12:12:00,53,53s,OK,manual,new stage: fold composition, buffer losses, polygons spanning folds
+09o_resolution_sensitivity,09o_resolution_sensitivity.py,2026-10-23,12:17:23,12:21:26,243,4m 3s,OK,manual,new stage: aggregation of v2 maps to 25/50/100 m
+05v2_lulc_ablation,05v2_train.py,2026-10-23,12:16:30,12:29:15,765,12m 45s,OK,manual,paired 1x ablation: v2_1x_abl_base and v2_1x_noLULC (DROP_FEATURES=LULC)
+08e_shift25000,08e_spatial_cv_v2.py,2026-10-23,12:13:14,13:15:16,3722,62m 2s,OK,manual,BLOCK_OFFSET_M=25000 SAMPLE_SET=v2: grid-origin sensitivity

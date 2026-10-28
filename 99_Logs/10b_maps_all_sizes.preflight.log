@@ -1,0 +1,8 @@
+
+=== preflight: 10b_generate_maps_all_sizes.py ===
+  syntax            OK
+  undefined names   OK
+  imports           OK
+  --> PASS
+
+1/1 passed

@@ -1,0 +1,37 @@
+Figure 1: Probability Maps ...
+  Saved: Fig1_Probability_Maps.png
+Figure 2: 5-Class Susceptibility Maps ...
+  Saved: Fig2_Susceptibility_5class.png
+Figure 3: Binary Maps ...
+  Saved: Fig3_Binary_Maps.png
+Figure 4: Ensemble Main Result ...
+  Saved: Fig4_Ensemble_Main.png
+Figure 5: Spatial Agreement Map ...
+  Saved: Fig5_Spatial_Agreement.png
+
+All panel figures saved to:
+  /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Manuscript/figures/
+
+Individual probability maps ...
+  Saved: Prob_RF.png
+  Saved: Prob_XGBoost.png
+  Saved: Prob_CatBoost.png
+  Saved: Prob_DNN.png
+  Saved: Prob_Ensemble_mean.png
+
+Individual 5-class susceptibility maps ...
+  Saved: 5class_RF.png
+  Saved: 5class_XGBoost.png
+  Saved: 5class_CatBoost.png
+  Saved: 5class_DNN.png
+  Saved: 5class_Ensemble_mean.png
+
+Individual binary maps ...
+  Saved: Binary_RF.png
+  Saved: Binary_XGBoost.png
+  Saved: Binary_CatBoost.png
+  Saved: Binary_DNN.png
+  Saved: Binary_Ensemble_mean.png
+
+All individual figures saved to:
+  /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/Manuscript/figures/individual/

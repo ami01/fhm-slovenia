@@ -1,0 +1,7 @@
+Model,Flood_Zone,Zone_Area_km2,Overlap_Cls4_5_km2,Pct_Zone_in_Cls4_5,VeryHigh_Area_km2,Pct_VeryHigh_in_Zone
+Ensemble_mean,Frequent,97.09,97.09,100.0,4051.58,2.4
+Ensemble_mean,Rare,464.88,464.88,100.0,4051.58,11.46
+Ensemble_mean,Extreme_Rare,1038.86,1038.84,100.0,4051.58,25.62
+XGBoost,Frequent,97.09,97.09,100.0,4051.98,2.4
+XGBoost,Rare,464.88,464.88,100.0,4051.98,11.47
+XGBoost,Extreme_Rare,1038.86,1038.86,100.0,4051.98,25.63

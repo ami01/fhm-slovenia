@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article and this software."
+title: "Beyond the training inventory: transferability and independent validation of national machine-learning flood susceptibility maps for Slovenia: code"
+type: software
+license: MIT
+repository-code: "https://github.com/ami01/fhm-slovenia"
+authors:
+  - family-names: Arora
+    given-names: Aman
+    affiliation: "University of Nova Gorica"
+    email: aman.arora@ung.si
+    orcid: "https://orcid.org/0000-0001-9396-8720"
+  - family-names: Petan
+    given-names: Sašo
+    affiliation: "Slovenian Environment Agency (ARSO)"
+keywords:
+  - flood susceptibility
+  - machine learning
+  - spatial cross-validation
+  - Slovenia

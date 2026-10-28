@@ -1,0 +1,49 @@
+incident log: 176818 rows, 2005-01-03 to 2026-02-13
+flood rows by type: pluvial 45156, riverine 30200, groundwater/sewer 4473
+flood rows on placeholder coordinates (reused >= 20 x): 15907 (19.9 %)
+unique flood sites: pluvial 16636, riverine 7623, groundwater/sewer 1525
+control sites (wind/snow/ice, never flood-reported): 28945
+sites inside Slovenia valid grid: 25780
+extremely-rare polygons revised after 2023-08-01: 2 (0.48 km2); August 2023 riverine sites inside them: 0
+  RF             done  (29 s)
+  XGBoost        done  (37 s)
+  CatBoost       done  (44 s)
+  DNN            done  (52 s)
+  Ensemble_mean  done  (59 s)
+        model                         subset  n_sites  flagged  flagged_50m  auc_vs_control  auc_vs_random
+           RF                      all sites     7621    0.631        0.836           0.796          0.881
+           RF              outside inventory     5019    0.460        0.751           0.725          0.853
+           RF    Aug 2023, outside inventory     3076    0.514        0.796           0.758          0.870
+           RF other dates, outside inventory     1943    0.374        0.679           0.674          0.826
+      XGBoost                      all sites     7621    0.583        0.785           0.801          0.879
+      XGBoost              outside inventory     5019    0.383        0.674           0.726          0.846
+      XGBoost    Aug 2023, outside inventory     3076    0.441        0.719           0.760          0.866
+      XGBoost other dates, outside inventory     1943    0.291        0.602           0.673          0.815
+     CatBoost                      all sites     7621    0.618        0.810           0.798          0.876
+     CatBoost              outside inventory     5019    0.442        0.712           0.728          0.845
+     CatBoost    Aug 2023, outside inventory     3076    0.505        0.757           0.760          0.863
+     CatBoost other dates, outside inventory     1943    0.341        0.640           0.677          0.816
+          DNN                      all sites     7621    0.645        0.838           0.786          0.871
+          DNN              outside inventory     5019    0.493        0.758           0.722          0.844
+          DNN    Aug 2023, outside inventory     3076    0.539        0.795           0.752          0.862
+          DNN other dates, outside inventory     1943    0.422        0.700           0.675          0.816
+Ensemble_mean                      all sites     7621    0.604        0.793           0.801          0.881
+Ensemble_mean              outside inventory     5019    0.421        0.686           0.730          0.852
+Ensemble_mean    Aug 2023, outside inventory     3076    0.480        0.735           0.763          0.870
+Ensemble_mean other dates, outside inventory     1943    0.328        0.608           0.679          0.824
+ decile  p_low  p_high  riverine_outside_inventory  riverine_aug2023_outside_inventory  pluvial_outside_inventory  control_wind_snow_ice
+      1   -inf   0.000                       0.018                               0.013                      0.031                  0.184
+      2  0.000   0.000                       0.042                               0.020                      0.078                  0.371
+      3  0.000   0.000                       0.040                               0.010                      0.134                  0.460
+      4  0.000   0.001                       0.076                               0.016                      0.209                  0.547
+      5  0.001   0.002                       0.082                               0.046                      0.215                  0.568
+      6  0.002   0.005                       0.090                               0.049                      0.299                  0.670
+      7  0.005   0.020                       0.291                               0.182                      0.622                  0.912
+      8  0.020   0.093                       1.052                               0.891                      1.785                  1.668
+      9  0.093   0.592                       4.387                               4.298                      4.462                  2.974
+     10  0.592     inf                       3.923                               4.477                      2.164                  1.646
+catchments (n=222, >=10 km2 in Slovenia): rho(map_frac, sites_per_100km2) = 0.268 (p=5.2e-05)
+catchments (n=222, >=10 km2 in Slovenia): rho(map_frac, sites_outside_inv_per_100km2) = 0.136 (p=4.2e-02)
+catchments (n=222, >=10 km2 in Slovenia): rho(inv_frac, sites_per_100km2) = 0.248 (p=2.0e-04)
+
+Saved -> 09_Analysis/incident_reports and Manuscript/figures/jem/JEM_Fig08b_incident_validation.png  (63 s)

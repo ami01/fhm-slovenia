@@ -1,0 +1,205 @@
+=================================================================
+STEP 1 — Balanced sampling from masked aligned rasters
+=================================================================
+Target : Flooded_NoFlood.tif
+Features (24): Distance_to_River, Distance_to_Road, Hgk_grouped, LULC, Pedoloska_grouped, River_Density, aspect, drainage_density, elevation, flow_accumulation, hand, lito_poly_250_d96_grouped, ls_factor, plan_curvature, profile_curvature, slope, slovenia_annual_max_daily_mean_3794_12m5, slovenia_annual_max_daily_p90_3794_12m5, slovenia_mean_annual_rainfall_3794_12m5, spi, tpi, tri, twi, valley_depth
+
+Flood pixels available   :  7,326,493
+No-flood pixels available: 122,423,292
+Sampled per class        : flood=50,000  no-flood=50,000
+
+Reading 24 feature rasters at 100,000 locations ...
+Samples after NaN removal: 99,732  (dropped 268)
+  Flood (1)   : 49,782
+  No-flood (0): 49,950
+Saved: samples_balanced_masked.csv
+
+=================================================================
+STEP 2 — Iterative VIF elimination
+         Threshold : VIF > 10.0
+=================================================================
+
+--- Round 1 | Features remaining: 24 ---
+slovenia_annual_max_daily_mean_3794_12m5    100.111
+tpi                                          73.019
+slovenia_annual_max_daily_p90_3794_12m5      49.003
+slope                                        44.333
+tri                                          38.064
+slovenia_mean_annual_rainfall_3794_12m5      27.678
+profile_curvature                            27.377
+plan_curvature                               23.898
+ls_factor                                     3.430
+spi                                           3.266
+lito_poly_250_d96_grouped                     3.030
+twi                                           2.679
+hand                                          2.594
+elevation                                     2.434
+valley_depth                                  2.100
+Pedoloska_grouped                             1.843
+flow_accumulation                             1.686
+River_Density                                 1.684
+Hgk_grouped                                   1.611
+Distance_to_River                             1.428
+drainage_density                              1.326
+LULC                                          1.313
+Distance_to_Road                              1.086
+aspect                                        1.013
+
+  → Removing 'slovenia_annual_max_daily_mean_3794_12m5'  (VIF = 100.11)
+
+--- Round 2 | Features remaining: 23 ---
+tpi                                        73.019
+slope                                      44.330
+tri                                        38.063
+profile_curvature                          27.377
+plan_curvature                             23.898
+slovenia_mean_annual_rainfall_3794_12m5    11.684
+slovenia_annual_max_daily_p90_3794_12m5    11.181
+ls_factor                                   3.430
+spi                                         3.266
+lito_poly_250_d96_grouped                   2.999
+twi                                         2.679
+hand                                        2.589
+elevation                                   2.434
+valley_depth                                2.098
+Pedoloska_grouped                           1.840
+flow_accumulation                           1.686
+River_Density                               1.673
+Hgk_grouped                                 1.611
+Distance_to_River                           1.426
+drainage_density                            1.326
+LULC                                        1.313
+Distance_to_Road                            1.086
+aspect                                      1.013
+
+  → Removing 'tpi'  (VIF = 73.02)
+
+--- Round 3 | Features remaining: 22 ---
+slope                                      44.316
+tri                                        38.055
+slovenia_mean_annual_rainfall_3794_12m5    11.684
+slovenia_annual_max_daily_p90_3794_12m5    11.181
+ls_factor                                   3.426
+spi                                         3.264
+lito_poly_250_d96_grouped                   2.999
+twi                                         2.679
+hand                                        2.589
+elevation                                   2.434
+valley_depth                                2.025
+Pedoloska_grouped                           1.840
+flow_accumulation                           1.686
+River_Density                               1.672
+Hgk_grouped                                 1.611
+Distance_to_River                           1.426
+plan_curvature                              1.355
+profile_curvature                           1.334
+drainage_density                            1.326
+LULC                                        1.313
+Distance_to_Road                            1.086
+aspect                                      1.013
+
+  → Removing 'slope'  (VIF = 44.32)
+
+--- Round 4 | Features remaining: 21 ---
+slovenia_mean_annual_rainfall_3794_12m5    11.667
+slovenia_annual_max_daily_p90_3794_12m5    11.166
+tri                                         4.042
+ls_factor                                   3.331
+spi                                         3.214
+lito_poly_250_d96_grouped                   2.919
+hand                                        2.589
+elevation                                   2.434
+twi                                         2.399
+valley_depth                                2.023
+Pedoloska_grouped                           1.830
+flow_accumulation                           1.674
+River_Density                               1.670
+Hgk_grouped                                 1.611
+Distance_to_River                           1.425
+plan_curvature                              1.355
+profile_curvature                           1.333
+drainage_density                            1.321
+LULC                                        1.310
+Distance_to_Road                            1.085
+aspect                                      1.013
+
+  → Removing 'slovenia_mean_annual_rainfall_3794_12m5'  (VIF = 11.67)
+
+--- Round 5 | Features remaining: 20 ---
+tri                                        3.976
+ls_factor                                  3.331
+spi                                        3.214
+lito_poly_250_d96_grouped                  2.711
+hand                                       2.581
+elevation                                  2.433
+twi                                        2.385
+valley_depth                               2.023
+Pedoloska_grouped                          1.829
+flow_accumulation                          1.673
+River_Density                              1.649
+Hgk_grouped                                1.611
+slovenia_annual_max_daily_p90_3794_12m5    1.501
+Distance_to_River                          1.425
+plan_curvature                             1.355
+profile_curvature                          1.333
+drainage_density                           1.321
+LULC                                       1.308
+Distance_to_Road                           1.085
+aspect                                     1.012
+
+All VIFs ≤ 10.0. Stopping.
+
+Elimination complete. Steps taken: 4
+Features retained: 20
+Saved: vif_elimination_log.csv
+Saved: vif_final.csv
+
+=================================================================
+STEP 3 — Correlation check on retained features
+         Flagging pairs with |r| > 0.8
+=================================================================
+
+High-correlation pairs (|r| > 0.8): 0
+  None — all pairs within acceptable range.
+Heatmap saved: correlation_heatmap_final.png
+Report saved: collinearity_report_final.txt
+Feature list saved: selected_features.txt
+
+=================================================================
+SUMMARY
+=================================================================
+
+Removed (4):
+  Step  1: slovenia_annual_max_daily_mean_3794_12m5       VIF = 100.11
+  Step  2: tpi                                            VIF = 73.02
+  Step  3: slope                                          VIF = 44.32
+  Step  4: slovenia_mean_annual_rainfall_3794_12m5        VIF = 11.67
+
+Retained (20):
+
+  Feature                                            VIF  Interpretation
+  ───────────────────────────────────────────── ────────  ────────────────────
+  tri                                              3.976  MODERATE
+  ls_factor                                        3.331  MODERATE
+  spi                                              3.214  MODERATE
+  lito_poly_250_d96_grouped                        2.711  MODERATE
+  hand                                             2.581  MODERATE
+  elevation                                        2.433  low
+  twi                                              2.385  low
+  valley_depth                                     2.023  low
+  Pedoloska_grouped                                1.829  low
+  flow_accumulation                                1.673  low
+  River_Density                                    1.649  low
+  Hgk_grouped                                      1.611  low
+  slovenia_annual_max_daily_p90_3794_12m5          1.501  low
+  Distance_to_River                                1.425  low
+  plan_curvature                                   1.355  low
+  profile_curvature                                1.333  low
+  drainage_density                                 1.321  low
+  LULC                                             1.308  low
+  Distance_to_Road                                 1.085  low
+  aspect                                           1.012  low
+
+No remaining high-correlation pairs (|r| > 0.8).
+
+All outputs in: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/02_Collinearity

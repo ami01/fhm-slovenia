@@ -1,0 +1,59 @@
+===================================================================
+FSM pipeline (preflight-gated)   2026-07-31 09:40:28
+===================================================================
+[09:40:28] CHECK 10a_figures
+          syntax            OK
+          undefined names   OK
+          imports           OK
+[09:40:35] START 10a_figures
+[09:46:56] OK    10a_figures  (6m 21s)
+[09:46:56] CHECK 10b_maps_all_sizes
+          syntax            OK
+          undefined names   OK
+          imports           OK
+[09:47:03] START 10b_maps_all_sizes
+[10:48:08] OK    10b_maps_all_sizes  (1h 01m 05s)
+[10:48:08] CHECK 10c_fix_comparison
+          syntax            OK
+          undefined names   OK
+          imports           OK
+[10:48:15] START 10c_fix_comparison
+[10:48:43] OK    10c_fix_comparison  (0m 28s)
+[10:48:43] CHECK 10d_manuscript
+          syntax            OK
+          undefined names   OK
+          imports           OK
+          input dir         OK    09_Analysis/shap (7 entries)
+[10:48:51] START 10d_manuscript
+[10:49:02] OK    10d_manuscript  (0m 11s)
+[10:49:02] CHECK 11a_codebook
+          syntax            OK
+          undefined names   OK
+          imports           OK
+[10:49:08] START 11a_codebook
+[10:49:16] OK    11a_codebook  (0m 08s)
+[10:49:16] CHECK 11b_raba_lulc
+          syntax            OK
+          undefined names   OK
+          imports           OK
+[10:49:22] START 11b_raba_lulc
+[10:49:30] OK    11b_raba_lulc  (0m 07s)
+[10:49:30] CHECK 11c_scripts_summary
+          syntax            OK
+          undefined names   OK
+          imports           OK
+[10:49:37] START 11c_scripts_summary
+[10:49:44] OK    11c_scripts_summary  (0m 07s)
+[10:49:44] CHECK 11d_summary_report
+          syntax            OK
+          undefined names   OK
+          imports           OK
+          input dir         OK    08_Validation (26 entries)
+          input dir         OK    09_Analysis (17 entries)
+          input dir         OK    09_Analysis/shap (7 entries)
+          input dir         OK    09_Analysis/spatial_cv (13 entries)
+[10:49:51] START 11d_summary_report
+[10:50:01] OK    11d_summary_report  (0m 10s)
+===================================================================
+PIPELINE COMPLETE  2026-07-31 10:50:01
+===================================================================

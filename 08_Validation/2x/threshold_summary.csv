@@ -1,0 +1,6 @@
+Model,CSI_threshold,CSI_value,Youden_threshold,Youden_value
+RF,0.5419,0.9027,0.6059,0.8963
+XGBoost,0.5616,0.9252,0.5616,0.9214
+CatBoost,0.532,0.9175,0.532,0.9128
+DNN,0.6059,0.8971,0.6059,0.8897
+Ensemble_mean,0.6207,0.9158,0.6256,0.9116

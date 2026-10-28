@@ -1,0 +1,11 @@
+# conda env used for the FSM Slovenia LULC run.
+#   conda env create -f environment.yml && conda activate floodcast_env
+# GPU: torch is the cu128 build; CatBoost/XGBoost use GPU. Falls back to CPU if absent.
+name: floodcast_env
+channels: [conda-forge]
+dependencies:
+  - python=3.10
+  - pip
+  - gdal
+  - pip:
+      - -r requirements.txt

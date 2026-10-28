@@ -1,0 +1,8 @@
+
+=== preflight: 11c_export_scripts_summary.py ===
+  syntax            OK
+  undefined names   OK
+  imports           OK
+  --> PASS
+
+1/1 passed

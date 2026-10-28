@@ -1,0 +1,270 @@
+Device: cuda
+
+Features (20): ['Distance_to_River', 'Distance_to_Road', 'Hgk_grouped', 'LULC', 'Pedoloska_grouped', 'River_Density', 'aspect', 'drainage_density', 'elevation', 'flow_accumulation', 'hand', 'lito_poly_250_d96_grouped', 'ls_factor', 'plan_curvature', 'profile_curvature', 'slovenia_annual_max_daily_p90_3794_12m5', 'spi', 'tri', 'twi', 'valley_depth']
+
+
+=================================================================
+SHAP ANALYSIS — 1x
+=================================================================
+Test samples : 19,947
+Train samples: 79,785
+
+Loading models from /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/04_Models/1x ...
+  RF, CatBoost, DNN loaded
+
+[1/4] RF TreeExplainer (n=1000) ...
+  shape: (1000, 20)
+[2/4] XGBoost pred_contribs (n=3000) ...
+  shape: (3000, 20)
+[3/4] CatBoost TreeExplainer (n=3000) ...
+  shape: (3000, 20)
+[4/4] DNN GradientExplainer (n=1000, bg=300) ...
+  shape: (1000, 20)
+
+Top-5 features per model [1x]:
+  RF: ['Soil_Type', 'TRI', 'HAND', 'Lithology', 'LS_Factor']
+  XGBoost: ['HAND', 'Soil_Type', 'Elevation', 'TRI', 'Valley_Dep']
+  CatBoost: ['Soil_Type', 'Elevation', 'HAND', 'Lithology', 'TRI']
+  DNN: ['HAND', 'Elevation', 'Soil_Type', 'Rain_P90', 'TRI']
+
+Beeswarm plots ...
+  → shap_beeswarm_rf.png
+  → shap_beeswarm_xgboost.png
+  → shap_beeswarm_catboost.png
+  → shap_beeswarm_dnn.png
+Bar plots ...
+  → shap_bar_rf.png
+  → shap_bar_xgboost.png
+  → shap_bar_catboost.png
+  → shap_bar_dnn.png
+Importance comparison plot ...
+  → shap_importance_comparison.png
+Dependence plots ...
+  Top-3 (XGBoost): ['HAND', 'Soil_Type', 'Elevation']
+  → shap_dependence_top3_rf.png
+  → shap_dependence_top3_xgboost.png
+  → shap_dependence_top3_catboost.png
+  → shap_dependence_top3_dnn.png
+
+[1x] SHAP done → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis/shap/1x
+
+=================================================================
+SHAP ANALYSIS — 2x
+=================================================================
+Test samples : 39,897
+Train samples: 159,588
+
+Loading models from /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/04_Models/2x ...
+  RF, CatBoost, DNN loaded
+
+[1/4] RF TreeExplainer (n=1000) ...
+  shape: (1000, 20)
+[2/4] XGBoost pred_contribs (n=3000) ...
+  shape: (3000, 20)
+[3/4] CatBoost TreeExplainer (n=3000) ...
+  shape: (3000, 20)
+[4/4] DNN GradientExplainer (n=1000, bg=300) ...
+  shape: (1000, 20)
+
+Top-5 features per model [2x]:
+  RF: ['Soil_Type', 'HAND', 'TRI', 'Lithology', 'LS_Factor']
+  XGBoost: ['HAND', 'Elevation', 'Soil_Type', 'TRI', 'Valley_Dep']
+  CatBoost: ['Soil_Type', 'Elevation', 'HAND', 'Lithology', 'Valley_Dep']
+  DNN: ['HAND', 'Elevation', 'Soil_Type', 'Rain_P90', 'TRI']
+
+Beeswarm plots ...
+  → shap_beeswarm_rf.png
+  → shap_beeswarm_xgboost.png
+  → shap_beeswarm_catboost.png
+  → shap_beeswarm_dnn.png
+Bar plots ...
+  → shap_bar_rf.png
+  → shap_bar_xgboost.png
+  → shap_bar_catboost.png
+  → shap_bar_dnn.png
+Importance comparison plot ...
+  → shap_importance_comparison.png
+Dependence plots ...
+  Top-3 (XGBoost): ['HAND', 'Elevation', 'Soil_Type']
+  → shap_dependence_top3_rf.png
+  → shap_dependence_top3_xgboost.png
+  → shap_dependence_top3_catboost.png
+  → shap_dependence_top3_dnn.png
+
+[2x] SHAP done → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis/shap/2x
+
+=================================================================
+SHAP ANALYSIS — 3x
+=================================================================
+Test samples : 59,846
+Train samples: 239,381
+
+Loading models from /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/04_Models/3x ...
+  RF, CatBoost, DNN loaded
+
+[1/4] RF TreeExplainer (n=1000) ...
+  shape: (1000, 20)
+[2/4] XGBoost pred_contribs (n=3000) ...
+  shape: (3000, 20)
+[3/4] CatBoost TreeExplainer (n=3000) ...
+  shape: (3000, 20)
+[4/4] DNN GradientExplainer (n=1000, bg=300) ...
+  shape: (1000, 20)
+
+Top-5 features per model [3x]:
+  RF: ['Soil_Type', 'HAND', 'TRI', 'Lithology', 'LS_Factor']
+  XGBoost: ['Elevation', 'HAND', 'Soil_Type', 'TRI', 'Valley_Dep']
+  CatBoost: ['Elevation', 'Soil_Type', 'HAND', 'Lithology', 'Rain_P90']
+  DNN: ['HAND', 'Soil_Type', 'Elevation', 'Rain_P90', 'Lithology']
+
+Beeswarm plots ...
+  → shap_beeswarm_rf.png
+  → shap_beeswarm_xgboost.png
+  → shap_beeswarm_catboost.png
+  → shap_beeswarm_dnn.png
+Bar plots ...
+  → shap_bar_rf.png
+  → shap_bar_xgboost.png
+  → shap_bar_catboost.png
+  → shap_bar_dnn.png
+Importance comparison plot ...
+  → shap_importance_comparison.png
+Dependence plots ...
+  Top-3 (XGBoost): ['Elevation', 'HAND', 'Soil_Type']
+  → shap_dependence_top3_rf.png
+  → shap_dependence_top3_xgboost.png
+  → shap_dependence_top3_catboost.png
+  → shap_dependence_top3_dnn.png
+
+[3x] SHAP done → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis/shap/3x
+
+=================================================================
+SHAP ANALYSIS — 4x
+=================================================================
+Test samples : 79,793
+Train samples: 319,168
+
+Loading models from /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/04_Models/4x ...
+  RF, CatBoost, DNN loaded
+
+[1/4] RF TreeExplainer (n=1000) ...
+  shape: (1000, 20)
+[2/4] XGBoost pred_contribs (n=3000) ...
+  shape: (3000, 20)
+[3/4] CatBoost TreeExplainer (n=3000) ...
+  shape: (3000, 20)
+[4/4] DNN GradientExplainer (n=1000, bg=300) ...
+  shape: (1000, 20)
+
+Top-5 features per model [4x]:
+  RF: ['Soil_Type', 'HAND', 'TRI', 'Lithology', 'LS_Factor']
+  XGBoost: ['HAND', 'Elevation', 'Soil_Type', 'TRI', 'Rain_P90']
+  CatBoost: ['Elevation', 'Soil_Type', 'HAND', 'Lithology', 'Rain_P90']
+  DNN: ['HAND', 'Soil_Type', 'Elevation', 'Rain_P90', 'Lithology']
+
+Beeswarm plots ...
+  → shap_beeswarm_rf.png
+  → shap_beeswarm_xgboost.png
+  → shap_beeswarm_catboost.png
+  → shap_beeswarm_dnn.png
+Bar plots ...
+  → shap_bar_rf.png
+  → shap_bar_xgboost.png
+  → shap_bar_catboost.png
+  → shap_bar_dnn.png
+Importance comparison plot ...
+  → shap_importance_comparison.png
+Dependence plots ...
+  Top-3 (XGBoost): ['HAND', 'Elevation', 'Soil_Type']
+  → shap_dependence_top3_rf.png
+  → shap_dependence_top3_xgboost.png
+  → shap_dependence_top3_catboost.png
+  → shap_dependence_top3_dnn.png
+
+[4x] SHAP done → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis/shap/4x
+
+=================================================================
+SHAP ANALYSIS — 10x
+=================================================================
+Test samples : 199,495
+Train samples: 797,978
+
+Loading models from /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/04_Models/10x ...
+  RF, CatBoost, DNN loaded
+
+[1/4] RF TreeExplainer (n=1000) ...
+  shape: (1000, 20)
+[2/4] XGBoost pred_contribs (n=3000) ...
+  shape: (3000, 20)
+[3/4] CatBoost TreeExplainer (n=3000) ...
+  shape: (3000, 20)
+[4/4] DNN GradientExplainer (n=1000, bg=300) ...
+  shape: (1000, 20)
+
+Top-5 features per model [10x]:
+  RF: ['Soil_Type', 'HAND', 'TRI', 'Lithology', 'LS_Factor']
+  XGBoost: ['Elevation', 'HAND', 'Soil_Type', 'TRI', 'Rain_P90']
+  CatBoost: ['Elevation', 'Soil_Type', 'HAND', 'Lithology', 'Rain_P90']
+  DNN: ['HAND', 'Soil_Type', 'Elevation', 'Rain_P90', 'Lithology']
+
+Beeswarm plots ...
+  → shap_beeswarm_rf.png
+  → shap_beeswarm_xgboost.png
+  → shap_beeswarm_catboost.png
+  → shap_beeswarm_dnn.png
+Bar plots ...
+  → shap_bar_rf.png
+  → shap_bar_xgboost.png
+  → shap_bar_catboost.png
+  → shap_bar_dnn.png
+Importance comparison plot ...
+  → shap_importance_comparison.png
+Dependence plots ...
+  Top-3 (XGBoost): ['Elevation', 'HAND', 'Soil_Type']
+  → shap_dependence_top3_rf.png
+  → shap_dependence_top3_xgboost.png
+  → shap_dependence_top3_catboost.png
+  → shap_dependence_top3_dnn.png
+
+[10x] SHAP done → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis/shap/10x
+
+=================================================================
+CROSS-SIZE SHAP IMPORTANCE COMPARISON
+=================================================================
+
+XGBoost feature rank across sizes:
+SampleSize      1x      2x      3x      4x     10x
+Feature                                           
+HAND        1.2226  1.3495  1.3415  1.4311  1.2776
+Elevation   1.0142  1.2744  1.3672  1.3879  1.5506
+Soil_Type   1.1323  1.1285  1.0893  1.0580  1.0105
+TRI         0.9302  0.9244  0.8454  0.8672  0.8346
+Valley_Dep  0.5893  0.6406  0.6408  0.5769  0.6150
+Rain_P90    0.4776  0.6087  0.6188  0.6195  0.6950
+Lithology   0.4043  0.5122  0.5387  0.5321  0.5236
+Dist_River  0.4330  0.4441  0.4060  0.4383  0.4108
+River_Den   0.2537  0.2781  0.2842  0.2939  0.2980
+LS_Factor   0.2827  0.2523  0.2748  0.2651  0.2726
+Hydro_Soil  0.2508  0.2266  0.2135  0.2281  0.2679
+LULC        0.2358  0.2428  0.2218  0.2087  0.2010
+Dist_Road   0.1546  0.1706  0.1585  0.1560  0.1434
+Flow_Acc    0.1454  0.1402  0.1522  0.1388  0.1229
+Aspect      0.1307  0.1323  0.1330  0.1284  0.1205
+TWI         0.1351  0.1584  0.1136  0.0985  0.0898
+Prof_Curv   0.1225  0.1120  0.1120  0.0829  0.0917
+Drain_Den   0.1052  0.0957  0.0988  0.0933  0.0858
+Plan_Curv   0.0834  0.0921  0.0813  0.0819  0.0652
+SPI         0.0729  0.0898  0.0745  0.0563  0.0400
+
+Saved: shap_rank_stability.png
+
+=================================================================
+ALL SHAP DONE
+=================================================================
+  shap/1x/  — 14 files
+  shap/2x/  — 14 files
+  shap/3x/  — 14 files
+  shap/4x/  — 14 files
+  shap/10x/  — 14 files
+  shap/shap_importance_all_sizes.csv
+  shap/shap_rank_stability.png

@@ -1,0 +1,528 @@
+
+=================================================================
+SIZE: 1x
+=================================================================
+
+─────────────────────────────────────────────────────────────────
+PART A — Standard validation  [1x]
+─────────────────────────────────────────────────────────────────
+Test: 19,947  flood=9,957  no-flood=9,990
+Samples with all models valid: 19,947
+
+  Model                   CSI t   CSI val   Youden t
+  -------------------- -------- --------- ----------
+  RF                     0.5419    0.8874     0.5419
+  XGBoost                0.4680    0.9097     0.4680
+  CatBoost               0.5271    0.9058     0.5517
+  DNN                    0.5419    0.8846     0.5862
+  Ensemble_mean          0.5468    0.9031     0.5468
+
+  Writing classified maps to /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/07_Classified_Maps/1x ...
+    RF                   thresh=0.5419  → binary + 5-class saved
+    XGBoost              thresh=0.4680  → binary + 5-class saved
+    CatBoost             thresh=0.5271  → binary + 5-class saved
+    DNN                  thresh=0.5419  → binary + 5-class saved
+    Ensemble_mean        thresh=0.5468  → binary + 5-class saved
+
+  Model                    AUC      F1     CSI   Kappa    Sens    Spec
+  -------------------- ------- ------- ------- ------- ------- -------
+  RF                    0.9821  0.9403  0.8874  0.8788  0.9565  0.9223
+  XGBoost               0.9877  0.9527  0.9097  0.9038  0.9717  0.9321
+  CatBoost              0.9864  0.9506  0.9058  0.8999  0.9642  0.9357
+  DNN                   0.9788  0.9387  0.8846  0.8745  0.9635  0.9110
+  Ensemble_mean         0.9859  0.9491  0.9031  0.8967  0.9643  0.9324
+
+  Plots saved → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/08_Validation/1x
+
+─────────────────────────────────────────────────────────────────
+PART B — Spatial CV  [1x]
+─────────────────────────────────────────────────────────────────
+Combined samples: 99,732  flood=49,782
+Spatial grid: 5 cols × 4 rows  |  Block size: 50 km
+
+  Fold         N    Flood   No-flood   Flood%
+  ----- -------- -------- ---------- --------
+  1       28,424   16,605     11,819    58.4%
+  2       14,358    4,315     10,043    30.1%
+  3       19,086    8,873     10,213    46.5%
+  4       28,489   17,864     10,625    62.7%
+  5        9,375    2,125      7,250    22.7%
+
+  ── Fold 1/5 ──
+     Train: 71,308  Test: 28,424  flood%=58.4%
+     RF      AUC=0.9448  CSI=0.8495  [35s]
+     XGBoost AUC=0.9360  CSI=0.8185  [20s]
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9378  CSI=0.8269  [23s]
+     DNN     AUC=0.9361  CSI=0.8437  [224s, best_ep=139]
+
+  ── Fold 2/5 ──
+     Train: 85,374  Test: 14,358  flood%=30.1%
+     RF      AUC=0.9854  CSI=0.8471  [32s]
+     XGBoost AUC=0.9853  CSI=0.8301  [13s]
+Warning: less than 75% GPU memory available for training. Free: 2735.75 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9845  CSI=0.8355  [16s]
+     DNN     AUC=0.9765  CSI=0.7893  [225s, best_ep=117]
+
+  ── Fold 3/5 ──
+     Train: 80,646  Test: 19,086  flood%=46.5%
+     RF      AUC=0.9745  CSI=0.8640  [33s]
+     XGBoost AUC=0.9749  CSI=0.8599  [15s]
+Warning: less than 75% GPU memory available for training. Free: 2735.75 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9771  CSI=0.8656  [19s]
+     DNN     AUC=0.9764  CSI=0.8557  [246s, best_ep=141]
+
+  ── Fold 4/5 ──
+     Train: 71,243  Test: 28,489  flood%=62.7%
+     RF      AUC=0.9547  CSI=0.8686  [36s]
+     XGBoost AUC=0.9536  CSI=0.8685  [21s]
+Warning: less than 75% GPU memory available for training. Free: 2735.75 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9532  CSI=0.8643  [23s]
+     DNN     AUC=0.9520  CSI=0.8620  [211s, best_ep=118]
+
+  ── Fold 5/5 ──
+     Train: 90,357  Test: 9,375  flood%=22.7%
+     RF      AUC=0.9720  CSI=0.7267  [32s]
+     XGBoost AUC=0.9680  CSI=0.6976  [10s]
+Warning: less than 75% GPU memory available for training. Free: 2778.9375 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9707  CSI=0.7073  [14s]
+     DNN     AUC=0.9704  CSI=0.7118  [258s, best_ep=125]
+
+  Total CV time [1x]: 25.2 min
+
+  Spatial CV mean ± std [1x]:
+  Model                   AUC            CSI             F1          Kappa
+  ------------ -------------- -------------- -------------- --------------
+  RF           0.9663±0.0163  0.8312±0.0591  0.9069±0.0368  0.8216±0.0447
+  XGBoost      0.9636±0.0192  0.8149±0.0687  0.8967±0.0436  0.8030±0.0580
+  CatBoost     0.9647±0.0190  0.8199±0.0653  0.8999±0.0411  0.8099±0.0532
+  DNN          0.9623±0.0177  0.8125±0.0632  0.8954±0.0396  0.8035±0.0337
+  Spatial CV plots saved → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis/spatial_cv/1x
+
+=================================================================
+SIZE: 2x
+=================================================================
+
+─────────────────────────────────────────────────────────────────
+PART A — Standard validation  [2x]
+─────────────────────────────────────────────────────────────────
+Test: 39,897  flood=19,914  no-flood=19,983
+Samples with all models valid: 39,897
+
+  Model                   CSI t   CSI val   Youden t
+  -------------------- -------- --------- ----------
+  RF                     0.5419    0.9027     0.6059
+  XGBoost                0.5616    0.9252     0.5616
+  CatBoost               0.5320    0.9175     0.5320
+  DNN                    0.6059    0.8971     0.6059
+  Ensemble_mean          0.6207    0.9158     0.6256
+
+  Writing classified maps to /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/07_Classified_Maps/2x ...
+    RF                   thresh=0.5419  → binary + 5-class saved
+    XGBoost              thresh=0.5616  → binary + 5-class saved
+    CatBoost             thresh=0.5320  → binary + 5-class saved
+    DNN                  thresh=0.6059  → binary + 5-class saved
+    Ensemble_mean        thresh=0.6207  → binary + 5-class saved
+
+  Model                    AUC      F1     CSI   Kappa    Sens    Spec
+  -------------------- ------- ------- ------- ------- ------- -------
+  RF                    0.9862  0.9488  0.9027  0.8961  0.9654  0.9308
+  XGBoost               0.9910  0.9611  0.9252  0.9214  0.9733  0.9482
+  CatBoost              0.9893  0.9570  0.9175  0.9128  0.9713  0.9415
+  DNN                   0.9830  0.9458  0.8971  0.8897  0.9637  0.9260
+  Ensemble_mean         0.9894  0.9560  0.9158  0.9115  0.9637  0.9479
+
+  Plots saved → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/08_Validation/2x
+
+─────────────────────────────────────────────────────────────────
+PART B — Spatial CV  [2x]
+─────────────────────────────────────────────────────────────────
+Combined samples: 199,485  flood=99,571
+Spatial grid: 5 cols × 4 rows  |  Block size: 50 km
+
+  Fold         N    Flood   No-flood   Flood%
+  ----- -------- -------- ---------- --------
+  1       56,992   33,323     23,669    58.5%
+  2       28,650    8,512     20,138    29.7%
+  3       37,945   17,531     20,414    46.2%
+  4       57,280   35,997     21,283    62.8%
+  5       18,618    4,208     14,410    22.6%
+
+  ── Fold 1/5 ──
+     Train: 142,493  Test: 56,992  flood%=58.5%
+     RF      AUC=0.9458  CSI=0.8554  [80s]
+     XGBoost AUC=0.9297  CSI=0.8191  [39s]
+Warning: less than 75% GPU memory available for training. Free: 2778.6875 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9313  CSI=0.8113  [41s]
+     DNN     AUC=0.9349  CSI=0.8444  [471s, best_ep=131]
+
+  ── Fold 2/5 ──
+     Train: 170,835  Test: 28,650  flood%=29.7%
+     RF      AUC=0.9861  CSI=0.8489  [75s]
+     XGBoost AUC=0.9853  CSI=0.8385  [23s]
+Warning: less than 75% GPU memory available for training. Free: 2768.9375 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9840  CSI=0.8327  [26s]
+     DNN     AUC=0.9796  CSI=0.8080  [467s, best_ep=115]
+
+  ── Fold 3/5 ──
+     Train: 161,540  Test: 37,945  flood%=46.2%
+     RF      AUC=0.9759  CSI=0.8628  [72s]
+     XGBoost AUC=0.9735  CSI=0.8542  [28s]
+Warning: less than 75% GPU memory available for training. Free: 2768.875 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9786  CSI=0.8662  [31s]
+     DNN     AUC=0.9736  CSI=0.8575  [521s, best_ep=147]
+
+  ── Fold 4/5 ──
+     Train: 142,205  Test: 57,280  flood%=62.8%
+     RF      AUC=0.9542  CSI=0.8715  [79s]
+     XGBoost AUC=0.9486  CSI=0.8671  [40s]
+Warning: less than 75% GPU memory available for training. Free: 2766.625 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9511  CSI=0.8596  [44s]
+     DNN     AUC=0.9503  CSI=0.8672  [471s, best_ep=137]
+
+  ── Fold 5/5 ──
+     Train: 180,867  Test: 18,618  flood%=22.6%
+     RF      AUC=0.9720  CSI=0.7177  [74s]
+     XGBoost AUC=0.9693  CSI=0.7011  [20s]
+Warning: less than 75% GPU memory available for training. Free: 2684.0625 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9714  CSI=0.7079  [21s]
+     DNN     AUC=0.9702  CSI=0.7153  [517s, best_ep=123]
+
+  Total CV time [2x]: 52.5 min
+
+  Spatial CV mean ± std [2x]:
+  Model                   AUC            CSI             F1          Kappa
+  ------------ -------------- -------------- -------------- --------------
+  RF           0.9668±0.0164  0.8313±0.0640  0.9067±0.0400  0.8251±0.0439
+  XGBoost      0.9613±0.0221  0.8160±0.0667  0.8974±0.0422  0.8042±0.0566
+  CatBoost     0.9633±0.0218  0.8155±0.0640  0.8973±0.0403  0.8027±0.0612
+  DNN          0.9617±0.0186  0.8185±0.0619  0.8991±0.0388  0.8118±0.0345
+  Spatial CV plots saved → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis/spatial_cv/2x
+
+=================================================================
+SIZE: 3x
+=================================================================
+
+─────────────────────────────────────────────────────────────────
+PART A — Standard validation  [3x]
+─────────────────────────────────────────────────────────────────
+Test: 59,846  flood=29,871  no-flood=29,975
+Samples with all models valid: 59,846
+
+  Model                   CSI t   CSI val   Youden t
+  -------------------- -------- --------- ----------
+  RF                     0.5172    0.9064     0.5172
+  XGBoost                0.5074    0.9295     0.5074
+  CatBoost               0.4483    0.9192     0.5222
+  DNN                    0.5419    0.9004     0.6157
+  Ensemble_mean          0.5419    0.9188     0.5419
+
+  Writing classified maps to /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/07_Classified_Maps/3x ...
+    RF                   thresh=0.5172  → binary + 5-class saved
+    XGBoost              thresh=0.5074  → binary + 5-class saved
+    CatBoost             thresh=0.4483  → binary + 5-class saved
+    DNN                  thresh=0.5419  → binary + 5-class saved
+    Ensemble_mean        thresh=0.5419  → binary + 5-class saved
+
+  Model                    AUC      F1     CSI   Kappa    Sens    Spec
+  -------------------- ------- ------- ------- ------- ------- -------
+  RF                    0.9870  0.9509  0.9064  0.9002  0.9686  0.9316
+  XGBoost               0.9919  0.9634  0.9295  0.9259  0.9781  0.9479
+  CatBoost              0.9899  0.9579  0.9192  0.9141  0.9793  0.9349
+  DNN                   0.9840  0.9476  0.9004  0.8928  0.9714  0.9214
+  Ensemble_mean         0.9901  0.9577  0.9188  0.9142  0.9728  0.9414
+
+  Plots saved → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/08_Validation/3x
+
+─────────────────────────────────────────────────────────────────
+PART B — Spatial CV  [3x]
+─────────────────────────────────────────────────────────────────
+Combined samples: 299,227  flood=149,356
+Spatial grid: 5 cols × 4 rows  |  Block size: 50 km
+
+  Fold         N    Flood   No-flood   Flood%
+  ----- -------- -------- ---------- --------
+  1       85,455   49,853     35,602    58.3%
+  2       43,015   12,918     30,097    30.0%
+  3       56,921   26,285     30,636    46.2%
+  4       85,939   54,010     31,929    62.8%
+  5       27,897    6,290     21,607    22.5%
+
+  ── Fold 1/5 ──
+     Train: 213,772  Test: 85,455  flood%=58.3%
+     RF      AUC=0.9462  CSI=0.8618  [128s]
+     XGBoost AUC=0.9278  CSI=0.8195  [64s]
+Warning: less than 75% GPU memory available for training. Free: 2696.6875 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9267  CSI=0.8031  [71s]
+     DNN     AUC=0.9369  CSI=0.8584  [745s, best_ep=146]
+
+  ── Fold 2/5 ──
+     Train: 256,212  Test: 43,015  flood%=30.0%
+     RF      AUC=0.9863  CSI=0.8559  [111s]
+     XGBoost AUC=0.9854  CSI=0.8411  [41s]
+Warning: less than 75% GPU memory available for training. Free: 2724.4375 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9845  CSI=0.8392  [46s]
+     DNN     AUC=0.9804  CSI=0.8034  [877s, best_ep=148]
+
+  ── Fold 3/5 ──
+     Train: 242,306  Test: 56,921  flood%=46.2%
+     RF      AUC=0.9750  CSI=0.8608  [119s]
+     XGBoost AUC=0.9714  CSI=0.8471  [40s]
+Warning: less than 75% GPU memory available for training. Free: 2727 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9769  CSI=0.8653  [53s]
+     DNN     AUC=0.9755  CSI=0.8558  [794s, best_ep=148]
+
+  ── Fold 4/5 ──
+     Train: 213,288  Test: 85,939  flood%=62.8%
+     RF      AUC=0.9526  CSI=0.8699  [118s]
+     XGBoost AUC=0.9477  CSI=0.8602  [56s]
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9524  CSI=0.8610  [59s]
+     DNN     AUC=0.9499  CSI=0.8639  [703s, best_ep=145]
+
+  ── Fold 5/5 ──
+     Train: 271,330  Test: 27,897  flood%=22.5%
+     RF      AUC=0.9733  CSI=0.7244  [111s]
+     XGBoost AUC=0.9697  CSI=0.7050  [24s]
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9713  CSI=0.7028  [27s]
+     DNN     AUC=0.9720  CSI=0.7173  [841s, best_ep=141]
+
+  Total CV time [3x]: 84.0 min
+
+  Spatial CV mean ± std [3x]:
+  Model                   AUC            CSI             F1          Kappa
+  ------------ -------------- -------------- -------------- --------------
+  RF           0.9667±0.0167  0.8346±0.0618  0.9088±0.0384  0.8285±0.0429
+  XGBoost      0.9604±0.0227  0.8146±0.0630  0.8967±0.0399  0.8017±0.0555
+  CatBoost     0.9624±0.0232  0.8143±0.0670  0.8964±0.0423  0.8003±0.0664
+  DNN          0.9629±0.0187  0.8198±0.0623  0.8999±0.0389  0.8137±0.0314
+  Spatial CV plots saved → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis/spatial_cv/3x
+
+=================================================================
+SIZE: 4x
+=================================================================
+
+─────────────────────────────────────────────────────────────────
+PART A — Standard validation  [4x]
+─────────────────────────────────────────────────────────────────
+Test: 79,793  flood=39,824  no-flood=39,969
+Samples with all models valid: 79,793
+
+  Model                   CSI t   CSI val   Youden t
+  -------------------- -------- --------- ----------
+  RF                     0.5616    0.9091     0.5714
+  XGBoost                0.4828    0.9323     0.4828
+  CatBoost               0.4778    0.9211     0.4778
+  DNN                    0.5419    0.9050     0.5616
+  Ensemble_mean          0.5222    0.9222     0.5714
+
+  Writing classified maps to /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/07_Classified_Maps/4x ...
+    RF                   thresh=0.5616  → binary + 5-class saved
+    XGBoost              thresh=0.4828  → binary + 5-class saved
+    CatBoost             thresh=0.4778  → binary + 5-class saved
+    DNN                  thresh=0.5419  → binary + 5-class saved
+    Ensemble_mean        thresh=0.5222  → binary + 5-class saved
+
+  Model                    AUC      F1     CSI   Kappa    Sens    Spec
+  -------------------- ------- ------- ------- ------- ------- -------
+  RF                    0.9877  0.9524  0.9091  0.9038  0.9640  0.9398
+  XGBoost               0.9925  0.9650  0.9323  0.9289  0.9817  0.9472
+  CatBoost              0.9900  0.9589  0.9211  0.9164  0.9773  0.9392
+  DNN                   0.9847  0.9501  0.9050  0.8981  0.9724  0.9258
+  Ensemble_mean         0.9905  0.9595  0.9222  0.9177  0.9770  0.9408
+
+  Plots saved → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/08_Validation/4x
+
+─────────────────────────────────────────────────────────────────
+PART B — Spatial CV  [4x]
+─────────────────────────────────────────────────────────────────
+Combined samples: 398,961  flood=199,119
+Spatial grid: 5 cols × 4 rows  |  Block size: 50 km
+
+  Fold         N    Flood   No-flood   Flood%
+  ----- -------- -------- ---------- --------
+  1      113,917   66,529     47,388    58.4%
+  2       57,566   17,266     40,300    30.0%
+  3       75,963   35,075     40,888    46.2%
+  4      114,387   71,907     42,480    62.9%
+  5       37,128    8,342     28,786    22.5%
+
+  ── Fold 1/5 ──
+     Train: 285,044  Test: 113,917  flood%=58.4%
+     RF      AUC=0.9454  CSI=0.8590  [168s]
+     XGBoost AUC=0.9265  CSI=0.8150  [73s]
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9254  CSI=0.7988  [77s]
+     DNN     AUC=0.9385  CSI=0.8564  [950s, best_ep=136]
+
+  ── Fold 2/5 ──
+     Train: 341,395  Test: 57,566  flood%=30.0%
+     RF      AUC=0.9860  CSI=0.8545  [159s]
+     XGBoost AUC=0.9837  CSI=0.8244  [42s]
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9834  CSI=0.8324  [46s]
+     DNN     AUC=0.9773  CSI=0.7814  [1077s, best_ep=147]
+
+  ── Fold 3/5 ──
+     Train: 322,998  Test: 75,963  flood%=46.2%
+     RF      AUC=0.9747  CSI=0.8601  [158s]
+     XGBoost AUC=0.9714  CSI=0.8498  [52s]
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9753  CSI=0.8636  [58s]
+     DNN     AUC=0.9731  CSI=0.8549  [1065s, best_ep=140]
+
+  ── Fold 4/5 ──
+     Train: 284,574  Test: 114,387  flood%=62.9%
+     RF      AUC=0.9552  CSI=0.8711  [167s]
+     XGBoost AUC=0.9464  CSI=0.8607  [74s]
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9532  CSI=0.8581  [78s]
+     DNN     AUC=0.9501  CSI=0.8571  [949s, best_ep=137]
+
+  ── Fold 5/5 ──
+     Train: 361,833  Test: 37,128  flood%=22.5%
+     RF      AUC=0.9727  CSI=0.7216  [153s]
+     XGBoost AUC=0.9695  CSI=0.6928  [30s]
+Warning: less than 75% GPU memory available for training. Free: 2744.25 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9704  CSI=0.6995  [35s]
+     DNN     AUC=0.9696  CSI=0.7107  [1194s, best_ep=144]
+
+  Total CV time [4x]: 110.2 min
+
+  Spatial CV mean ± std [4x]:
+  Model                   AUC            CSI             F1          Kappa
+  ------------ -------------- -------------- -------------- --------------
+  RF           0.9668±0.0163  0.8333±0.0627  0.9080±0.0391  0.8273±0.0422
+  XGBoost      0.9595±0.0228  0.8085±0.0673  0.8928±0.0430  0.7947±0.0559
+  CatBoost     0.9615±0.0230  0.8105±0.0671  0.8941±0.0425  0.7972±0.0656
+  DNN          0.9617±0.0166  0.8121±0.0653  0.8952±0.0409  0.8058±0.0305
+  Spatial CV plots saved → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis/spatial_cv/4x
+
+=================================================================
+SIZE: 10x
+=================================================================
+
+─────────────────────────────────────────────────────────────────
+PART A — Standard validation  [10x]
+─────────────────────────────────────────────────────────────────
+Test: 199,495  flood=99,575  no-flood=99,920
+Samples with all models valid: 199,495
+
+  Model                   CSI t   CSI val   Youden t
+  -------------------- -------- --------- ----------
+  RF                     0.5172    0.9186     0.5616
+  XGBoost                0.5369    0.9406     0.5468
+  CatBoost               0.5222    0.9255     0.5222
+  DNN                    0.5320    0.9085     0.5320
+  Ensemble_mean          0.5566    0.9280     0.5714
+
+  Writing classified maps to /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/07_Classified_Maps/10x ...
+    RF                   thresh=0.5172  → binary + 5-class saved
+    XGBoost              thresh=0.5369  → binary + 5-class saved
+    CatBoost             thresh=0.5222  → binary + 5-class saved
+    DNN                  thresh=0.5320  → binary + 5-class saved
+    Ensemble_mean        thresh=0.5566  → binary + 5-class saved
+
+  Model                    AUC      F1     CSI   Kappa    Sens    Spec
+  -------------------- ------- ------- ------- ------- ------- -------
+  RF                    0.9903  0.9576  0.9186  0.9138  0.9755  0.9383
+  XGBoost               0.9941  0.9694  0.9406  0.9381  0.9824  0.9557
+  CatBoost              0.9910  0.9613  0.9255  0.9216  0.9759  0.9458
+  DNN                   0.9860  0.9520  0.9085  0.9019  0.9752  0.9268
+  Ensemble_mean         0.9921  0.9627  0.9280  0.9244  0.9765  0.9479
+
+  Plots saved → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/08_Validation/10x
+
+─────────────────────────────────────────────────────────────────
+PART B — Spatial CV  [10x]
+─────────────────────────────────────────────────────────────────
+Combined samples: 997,473  flood=497,873
+Spatial grid: 5 cols × 4 rows  |  Block size: 50 km
+
+  Fold         N    Flood   No-flood   Flood%
+  ----- -------- -------- ---------- --------
+  1      284,873  166,099    118,774    58.3%
+  2      144,224   43,680    100,544    30.3%
+  3      189,660   87,433    102,227    46.1%
+  4      286,113  179,999    106,114    62.9%
+  5       92,603   20,662     71,941    22.3%
+
+  ── Fold 1/5 ──
+     Train: 712,600  Test: 284,873  flood%=58.3%
+     RF      AUC=0.9459  CSI=0.8662  [458s]
+     XGBoost AUC=0.9238  CSI=0.8062  [176s]
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9290  CSI=0.8045  [182s]
+     DNN     AUC=0.9384  CSI=0.8641  [2256s, best_ep=127]
+
+  ── Fold 2/5 ──
+     Train: 853,249  Test: 144,224  flood%=30.3%
+     RF      AUC=0.9863  CSI=0.8557  [417s]
+     XGBoost AUC=0.9827  CSI=0.8176  [96s]
+Warning: less than 75% GPU memory available for training. Free: 2738.625 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9817  CSI=0.8216  [105s]
+     DNN     AUC=0.9784  CSI=0.7912  [2721s, best_ep=149]
+
+  ── Fold 3/5 ──
+     Train: 807,813  Test: 189,660  flood%=46.1%
+     RF      AUC=0.9739  CSI=0.8564  [424s]
+     XGBoost AUC=0.9697  CSI=0.8362  [121s]
+Warning: less than 75% GPU memory available for training. Free: 2738.625 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9748  CSI=0.8579  [130s]
+     DNN     AUC=0.9731  CSI=0.8495  [2607s, best_ep=147]
+
+  ── Fold 4/5 ──
+     Train: 711,360  Test: 286,113  flood%=62.9%
+     RF      AUC=0.9540  CSI=0.8697  [435s]
+     XGBoost AUC=0.9454  CSI=0.8547  [174s]
+Warning: less than 75% GPU memory available for training. Free: 2736.625 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9510  CSI=0.8546  [182s]
+     DNN     AUC=0.9492  CSI=0.8664  [2349s, best_ep=148]
+
+  ── Fold 5/5 ──
+     Train: 904,870  Test: 92,603  flood%=22.3%
+     RF      AUC=0.9724  CSI=0.7184  [411s]
+     XGBoost AUC=0.9698  CSI=0.6979  [68s]
+Warning: less than 75% GPU memory available for training. Free: 2768.625 Total: 3706.375
+Default metric period is 5 because AUC is/are not implemented for GPU
+     CatBoost AUC=0.9735  CSI=0.7109  [77s]
+     DNN     AUC=0.9691  CSI=0.7008  [2856s, best_ep=141]
+
+  Total CV time [10x]: 271.0 min
+
+  Spatial CV mean ± std [10x]:
+  Model                   AUC            CSI             F1          Kappa
+  ------------ -------------- -------------- -------------- --------------
+  RF           0.9665±0.0163  0.8333±0.0645  0.9079±0.0403  0.8279±0.0415
+  XGBoost      0.9583±0.0235  0.8025±0.0613  0.8894±0.0392  0.7867±0.0544
+  CatBoost     0.9620±0.0218  0.8099±0.0597  0.8940±0.0376  0.7964±0.0580
+  DNN          0.9616±0.0170  0.8144±0.0704  0.8963±0.0443  0.8100±0.0296
+  Spatial CV plots saved → /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis/spatial_cv/10x
+
+=================================================================
+CROSS-SIZE COMPARISON
+=================================================================
+
+Cross-size comparison saved → ML_Results/validation/multiscale_comparison.png
+
+ALL DONE
+  validation/{size}/   — metrics, plots, thresholds
+  classified_maps/{size}/ — binary + 5-class TIFs
+  spatial_cv/{size}/   — fold metrics, CV comparison

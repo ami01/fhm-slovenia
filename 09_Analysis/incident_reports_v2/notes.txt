@@ -1,0 +1,31 @@
+flood sites outside inventory 5019, of which Aug 2023 3076; comparison sites 28924
+        model   AUC  CI_lo  CI_hi  AUC_aug2023  CI_lo_aug  CI_hi_aug
+      XGBoost 0.726  0.720  0.733        0.760      0.752      0.768
+Ensemble_mean 0.730  0.724  0.737        0.763      0.756      0.770
+     CatBoost 0.728  0.721  0.735        0.760      0.752      0.768
+           RF 0.725  0.719  0.732        0.758      0.751      0.765
+          DNN 0.722  0.716  0.728        0.752      0.744      0.759
+                                                              predictor   AUC
+                                                           ensemble map 0.730
+                                                  distance to river (−) 0.688
+                                                               HAND (−) 0.662
+                                                          elevation (−) 0.441
+HAND + distance to river + elevation, 5-fold logistic on the test sites 0.719
+                ensemble + the three terrain variables, 5-fold logistic 0.753
+                                     band  elev_min  elev_max  n_flood  n_comp  AUC_ensemble  AUC_HAND
+                                        0     0.000   239.489    771.0  6018.0         0.627     0.581
+                                        1   239.505   299.114    540.0  6248.0         0.699     0.664
+                                        2   299.114   368.063   1316.0  5474.0         0.806     0.717
+                                        3   368.069   475.539   1424.0  5363.0         0.782     0.654
+                                        4   475.550  1727.095    968.0  5821.0         0.776     0.713
+elevation-matched (comparison reweighted)       NaN       NaN      NaN     NaN         0.749       NaN
+                      vs Močan veter only       NaN       NaN      NaN 24817.0         0.726       NaN
+                       vs Visok sneg only       NaN       NaN      NaN  3308.0         0.744       NaN
+                             vs Žled only       NaN       NaN      NaN   799.0         0.823       NaN
+median elevation: flood 360 m, comparison 321 m
+        model  flagged_flood  flagged_comp  ratio  flagged50_flood  flagged50_comp  ratio50
+      XGBoost          0.383         0.161  2.378            0.674           0.328    2.051
+Ensemble_mean          0.421         0.176  2.388            0.686           0.336    2.041
+     CatBoost          0.442         0.182  2.424            0.712           0.353    2.017
+           RF          0.460         0.208  2.207            0.751           0.390    1.924
+          DNN          0.493         0.234  2.111            0.758           0.410    1.848

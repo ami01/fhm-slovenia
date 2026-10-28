@@ -1,0 +1,16 @@
+{
+  "Model": "DNN",
+  "Threshold": 0.4926,
+  "AUC": 0.979,
+  "CSI": 0.8813,
+  "F1": 0.9369,
+  "Accuracy": 0.9354,
+  "Kappa": 0.8708,
+  "Sensitivity": 0.9614,
+  "Specificity": 0.9094,
+  "Precision": 0.9136,
+  "TP": 9573,
+  "TN": 9085,
+  "FP": 905,
+  "FN": 384
+}

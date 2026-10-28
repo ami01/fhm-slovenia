@@ -1,0 +1,23 @@
+Loaded DNN hand-off: AUC=0.979  threshold=0.4926
+Reconstructed CSI curve agrees with handoff (peak 0.8813).
+
+validation_metrics.csv already contains a DNN row from stage 07 (evaluated on the 10x probability map).
+Skipping the append - the stage 07 row supersedes the 05b handoff, which is 1x only.
+Regenerating the comparison plots from the existing table.
+
+Plots saved: roc_all_models.png, metrics_all_models.png,
+             confusion_matrix_DNN.png, csi_threshold_dnn.png
+
+=================================================================
+FINAL COMPARISON — ALL MODELS
+=================================================================
+        Model  Threshold    AUC    CSI     F1  Sensitivity  Specificity  Kappa
+      XGBoost     0.5369 0.9941 0.9406 0.9694       0.9824       0.9557 0.9381
+Ensemble_mean     0.5566 0.9921 0.9280 0.9627       0.9765       0.9479 0.9244
+     CatBoost     0.5222 0.9910 0.9255 0.9613       0.9759       0.9458 0.9216
+           RF     0.5172 0.9903 0.9186 0.9576       0.9755       0.9383 0.9138
+          DNN     0.5320 0.9860 0.9085 0.9520       0.9752       0.9268 0.9019
+
+Best overall: XGBoost  (AUC=0.9941  CSI=0.9406  Kappa=0.9381)
+
+All outputs in: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/08_Validation

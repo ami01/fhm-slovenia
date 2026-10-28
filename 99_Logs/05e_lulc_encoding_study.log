@@ -1,0 +1,93 @@
+GPU capped at 15% of device memory
+train 79,785 | test 19,947 | base features 19
+sampling fraction raster at sample coordinates ...
+  read frac_arable
+  read frac_permanent_crop
+  read frac_grassland
+  read frac_woody
+  read frac_built_up
+  read frac_water_wetland
+  read frac_bare_open
+  mean coverage train=1.0000 test=1.0000
+  baseline19   19 columns
+  ordinal20    20 columns
+  onehot       25 columns
+  fractions    25 columns
+
+=== baseline19 (19 features) ===
+  [1/10] seed= 42  AUC=0.9774  CSI=0.8833  F1=0.9380  Kappa=0.8730
+  [2/10] seed= 43  AUC=0.9772  CSI=0.8786  F1=0.9354  Kappa=0.8674
+  [3/10] seed= 44  AUC=0.9772  CSI=0.8806  F1=0.9365  Kappa=0.8703
+  [4/10] seed= 45  AUC=0.9773  CSI=0.8821  F1=0.9373  Kappa=0.8717
+  [5/10] seed= 46  AUC=0.9774  CSI=0.8822  F1=0.9374  Kappa=0.8723
+  [6/10] seed= 47  AUC=0.9767  CSI=0.8790  F1=0.9356  Kappa=0.8673
+  [7/10] seed= 48  AUC=0.9768  CSI=0.8802  F1=0.9363  Kappa=0.8691
+  [8/10] seed= 49  AUC=0.9770  CSI=0.8786  F1=0.9354  Kappa=0.8669
+  [9/10] seed= 50  AUC=0.9768  CSI=0.8804  F1=0.9364  Kappa=0.8690
+  [10/10] seed= 51  AUC=0.9765  CSI=0.8784  F1=0.9353  Kappa=0.8671
+
+=== ordinal20 (20 features) ===
+  [1/10] seed= 42  AUC=0.9778  CSI=0.8802  F1=0.9363  Kappa=0.8682
+  [2/10] seed= 43  AUC=0.9780  CSI=0.8796  F1=0.9359  Kappa=0.8689
+  [3/10] seed= 44  AUC=0.9784  CSI=0.8807  F1=0.9366  Kappa=0.8694
+  [4/10] seed= 45  AUC=0.9779  CSI=0.8802  F1=0.9363  Kappa=0.8688
+  [5/10] seed= 46  AUC=0.9778  CSI=0.8807  F1=0.9365  Kappa=0.8693
+  [6/10] seed= 47  AUC=0.9780  CSI=0.8788  F1=0.9355  Kappa=0.8679
+  [7/10] seed= 48  AUC=0.9777  CSI=0.8799  F1=0.9361  Kappa=0.8695
+  [8/10] seed= 49  AUC=0.9774  CSI=0.8792  F1=0.9357  Kappa=0.8667
+  [9/10] seed= 50  AUC=0.9780  CSI=0.8785  F1=0.9353  Kappa=0.8676
+  [10/10] seed= 51  AUC=0.9782  CSI=0.8804  F1=0.9364  Kappa=0.8696
+
+=== onehot (25 features) ===
+  [1/10] seed= 42  AUC=0.9780  CSI=0.8794  F1=0.9358  Kappa=0.8678
+  [2/10] seed= 43  AUC=0.9782  CSI=0.8805  F1=0.9365  Kappa=0.8687
+  [3/10] seed= 44  AUC=0.9780  CSI=0.8797  F1=0.9360  Kappa=0.8674
+  [4/10] seed= 45  AUC=0.9780  CSI=0.8807  F1=0.9366  Kappa=0.8698
+  [5/10] seed= 46  AUC=0.9778  CSI=0.8791  F1=0.9357  Kappa=0.8662
+  [6/10] seed= 47  AUC=0.9780  CSI=0.8804  F1=0.9364  Kappa=0.8685
+  [7/10] seed= 48  AUC=0.9777  CSI=0.8799  F1=0.9361  Kappa=0.8683
+  [8/10] seed= 49  AUC=0.9781  CSI=0.8802  F1=0.9363  Kappa=0.8696
+  [9/10] seed= 50  AUC=0.9779  CSI=0.8815  F1=0.9370  Kappa=0.8705
+  [10/10] seed= 51  AUC=0.9786  CSI=0.8794  F1=0.9358  Kappa=0.8674
+
+=== fractions (25 features) ===
+  [1/10] seed= 42  AUC=0.9784  CSI=0.8818  F1=0.9372  Kappa=0.8706
+  [2/10] seed= 43  AUC=0.9784  CSI=0.8812  F1=0.9368  Kappa=0.8701
+  [3/10] seed= 44  AUC=0.9783  CSI=0.8808  F1=0.9366  Kappa=0.8699
+  [4/10] seed= 45  AUC=0.9781  CSI=0.8829  F1=0.9378  Kappa=0.8723
+  [5/10] seed= 46  AUC=0.9781  CSI=0.8786  F1=0.9354  Kappa=0.8676
+  [6/10] seed= 47  AUC=0.9782  CSI=0.8791  F1=0.9357  Kappa=0.8672
+  [7/10] seed= 48  AUC=0.9781  CSI=0.8806  F1=0.9365  Kappa=0.8679
+  [8/10] seed= 49  AUC=0.9781  CSI=0.8807  F1=0.9366  Kappa=0.8699
+  [9/10] seed= 50  AUC=0.9781  CSI=0.8814  F1=0.9370  Kappa=0.8705
+  [10/10] seed= 51  AUC=0.9790  CSI=0.8841  F1=0.9385  Kappa=0.8727
+
+==============================================================================
+LULC encoding comparison — DNN over 10 seeds per variant
+==============================================================================
+variant                    AUC              CSI               F1            Kappa
+baseline19        0.9770+-0.0003     0.8803+-0.0017     0.9364+-0.0010     0.8694+-0.0023
+ordinal20         0.9779+-0.0003     0.8798+-0.0008     0.9361+-0.0004     0.8686+-0.0010
+onehot            0.9780+-0.0002     0.8801+-0.0007     0.9362+-0.0004     0.8684+-0.0013
+fractions         0.9783+-0.0003     0.8811+-0.0016     0.9368+-0.0009     0.8698+-0.0019
+
+==============================================================================
+Each encoding vs baseline19 (no LULC).  |d|/sd_pooled >= 2 => real effect
+==============================================================================
+variant      metric         delta  sd_pooled   |d|/sd  verdict
+ordinal20    AUC          +0.0009     0.0003     3.07  better
+ordinal20    CSI          -0.0005     0.0013     0.39  within noise
+ordinal20    F1           -0.0003     0.0008     0.38  within noise
+ordinal20    Kappa        -0.0008     0.0018     0.46  within noise
+
+onehot       AUC          +0.0010     0.0003     3.66  better
+onehot       CSI          -0.0002     0.0013     0.19  within noise
+onehot       F1           -0.0001     0.0008     0.19  within noise
+onehot       Kappa        -0.0010     0.0019     0.53  within noise
+
+fractions    AUC          +0.0013     0.0003     4.24  better
+fractions    CSI          +0.0008     0.0017     0.48  within noise
+fractions    F1           +0.0005     0.0009     0.48  within noise
+fractions    Kappa        +0.0005     0.0021     0.22  within noise
+
+Saved lulc_encoding_study.csv / _summary.csv / .png -> /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/05_Results

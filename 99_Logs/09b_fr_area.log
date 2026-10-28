@@ -1,0 +1,129 @@
+
+======================================================================
+PART 1: Susceptibility Class Area Statistics
+======================================================================
+  RF: done
+  XGBoost: done
+  CatBoost: done
+  Ensemble_mean: done
+  DNN: done
+  Saved area_statistics.csv
+  Saved area_statistics.png
+
+Area Statistics Summary:
+        Model  Class Class_Label   Pixels  Area_km2  Pct_Total  Pct_Flooded
+           RF      1    Very Low 25871433   4042.41      19.96        0.000
+           RF      2         Low 25932814   4052.00      20.01        0.000
+           RF      3    Moderate 25959647   4056.19      20.03        0.002
+           RF      4        High 25952851   4055.13      20.02        0.073
+           RF      5   Very High 25906069   4047.82      19.99       28.080
+      XGBoost      1    Very Low 25912509   4048.83      19.99        0.000
+      XGBoost      2         Low 25929422   4051.47      20.00        0.000
+      XGBoost      3    Moderate 25951374   4054.90      20.02        0.000
+      XGBoost      4        High 25896850   4046.38      19.98        0.010
+      XGBoost      5   Very High 25932659   4051.98      20.01       28.116
+     CatBoost      1    Very Low 25925520   4050.86      20.00        0.000
+     CatBoost      2         Low 25904126   4047.52      19.98        0.000
+     CatBoost      3    Moderate 25929126   4051.43      20.00        0.001
+     CatBoost      4        High 25944382   4053.81      20.02        0.040
+     CatBoost      5   Very High 25919660   4049.95      20.00       28.099
+Ensemble_mean      1    Very Low 25890777   4045.43      19.97        0.000
+Ensemble_mean      2         Low 25910989   4048.59      19.99        0.000
+Ensemble_mean      3    Moderate 25993449   4061.48      20.05        0.001
+Ensemble_mean      4        High 25897494   4046.48      19.98        0.030
+Ensemble_mean      5   Very High 25930105   4051.58      20.00       28.099
+          DNN      1    Very Low 25923045   4050.48      20.00        0.000
+          DNN      2         Low 25900062   4046.88      19.98        0.000
+          DNN      3    Moderate 25945982   4054.06      20.02        0.002
+          DNN      4        High 25940833   4053.26      20.01        0.080
+          DNN      5   Very High 25912892   4048.89      19.99       28.066
+
+======================================================================
+PART 2: Frequency Ratio Analysis
+======================================================================
+  Features (20): ['Distance_to_River', 'Distance_to_Road', 'Hgk_grouped', 'LULC', 'Pedoloska_grouped', 'River_Density', 'aspect', 'drainage_density', 'elevation', 'flow_accumulation', 'hand', 'lito_poly_250_d96_grouped', 'ls_factor', 'plan_curvature', 'profile_curvature', 'slovenia_annual_max_daily_p90_3794_12m5', 'spi', 'tri', 'twi', 'valley_depth']
+  Downsampled grid: 1299x1990 = 2,585,010 pixels
+  Total valid: 1,296,340, Flood: 73,152
+  Distance_to_River: done
+  Distance_to_Road: done
+  Hgk_grouped: done
+  LULC: done
+  Pedoloska_grouped: done
+  River_Density: done
+  aspect: done
+  drainage_density: done
+  elevation: done
+  flow_accumulation: done
+  hand: done
+  lito_poly_250_d96_grouped: done
+  ls_factor: done
+  plan_curvature: done
+  profile_curvature: done
+  slovenia_annual_max_daily_p90_3794_12m5: done
+  spi: done
+  tri: done
+  twi: done
+  valley_depth: done
+  Saved frequency_ratio.csv
+  Saved frequency_ratio_plots.png
+
+======================================================================
+PART 3: National Flood Map Comparison
+======================================================================
+  Rasterizing Frequent...
+    Frequent: 622,057 flood pixels
+  Rasterizing Rare...
+    Rare: 3,008,540 flood pixels
+  Rasterizing Extreme_Rare...
+    Extreme_Rare: 6,687,065 flood pixels
+  Ensemble_mean: done
+  XGBoost: done
+  Saved national_flood_comparison.csv
+  Saved national_flood_comparison.png
+
+National Flood Comparison:
+        Model   Flood_Zone  Zone_Area_km2  Overlap_Cls4_5_km2  Pct_Zone_in_Cls4_5  VeryHigh_Area_km2  Pct_VeryHigh_in_Zone
+Ensemble_mean     Frequent          97.09               97.09               100.0            4051.58                  2.40
+Ensemble_mean         Rare         464.88              464.88               100.0            4051.58                 11.46
+Ensemble_mean Extreme_Rare        1038.86             1038.84               100.0            4051.58                 25.62
+      XGBoost     Frequent          97.09               97.09               100.0            4051.98                  2.40
+      XGBoost         Rare         464.88              464.88               100.0            4051.98                 11.47
+      XGBoost Extreme_Rare        1038.86             1038.86               100.0            4051.98                 25.63
+
+======================================================================
+PART 4: Spatial Agreement
+======================================================================
+  Building agreement map (strip by strip)...
+  Saved spatial_agreement_map.tif
+  Saved spatial_agreement_stats.csv
+
+Spatial Agreement Stats:
+ Models_Agree_VeryHigh   Pixels  Area_km2  Pct_Slovenia
+                     0 98650083  15414.08       76.1055
+                     1  3488073    545.01        2.6909
+                     2  1690320    264.11        1.3040
+                     3  1734075    270.95        1.3378
+                     4  2770868    432.95        2.1376
+                     5 21289395   3326.47       16.4241
+  Saved spatial_agreement.png
+
+======================================================================
+Generating Word Report...
+======================================================================
+  Saved analysis_report.docx
+
+======================================================================
+ALL OUTPUTS SAVED TO: /home/arora/Documents/FSM_Slovenia/FSM_Pipeline_LULC/09_Analysis
+======================================================================
+  OK      area_statistics.csv  (1,182 bytes)
+  OK      area_statistics.png  (60,420 bytes)
+  OK      frequency_ratio.csv  (9,022 bytes)
+  OK      frequency_ratio_plots.png  (398,308 bytes)
+  OK      national_flood_comparison.csv  (428 bytes)
+  OK      national_flood_comparison.png  (68,222 bytes)
+  OK      spatial_agreement_map.tif  (517,553,106 bytes)
+  OK      spatial_agreement_stats.csv  (201 bytes)
+  OK      spatial_agreement.png  (182,180 bytes)
+  OK      analysis_report.docx  (638,333 bytes)
+======================================================================
+Done.

@@ -1,0 +1,30 @@
+{
+  "title": "Beyond the training inventory: transferability and independent validation of national machine-learning flood susceptibility maps for Slovenia: code",
+  "upload_type": "software",
+  "description": "Python pipeline (data preparation, model training, spatial cross-validation, transferability tests, verification at the true base rate, validation against civil-protection flood reports, figures and tables) for the article 'Beyond the training inventory: transferability and independent validation of national machine-learning flood susceptibility maps for Slovenia' (Arora and Petan, submitted to the Journal of Hydrology). The maps and model inputs are in a separate Zenodo data deposit.",
+  "creators": [
+    {
+      "name": "Arora, Aman",
+      "affiliation": "University of Nova Gorica",
+      "orcid": "0000-0001-9396-8720"
+    },
+    {
+      "name": "Petan, Sašo",
+      "affiliation": "Slovenian Environment Agency (ARSO)"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": [
+    "flood susceptibility",
+    "machine learning",
+    "spatial cross-validation",
+    "transferability",
+    "Slovenia"
+  ],
+  "grants": [
+    {
+      "id": "10.13039/501100000780::101081355"
+    }
+  ]
+}
