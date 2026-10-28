@@ -48,6 +48,7 @@ remain intact for comparison.
 | `09_Analysis/` | Area statistics, frequency ratio, spatial CV, SHAP, sub-basin |
 | `10_Documentation/` | Word documents (codebook, RABA→LULC conversion, scripts summary) |
 | `99_Logs/` | stdout/stderr of every stage |
+| `supp_tables/` | Complete machine-readable tables summarised in the Supplementary Material (hold-out and per-fold results, transferability folds, frequency ratios, resolution analysis, fold composition) |
 
 `01_Input_Features/` holds **symlinks**, not copies — the rasters are 13 GB and
 duplicating them serves no purpose. Delete the folder and re-link if the source moves.
